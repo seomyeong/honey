@@ -1,3 +1,4 @@
+/*--------------------슬라이드----------------------- */
 $('.snb').hide()
 /* 주요네비-전체내리기 */
 // $('#gnbTitle').hover(function(){
@@ -30,7 +31,14 @@ document.addEventListener('wheel',function(e){
         state=1
     }
 })
+/* 메인배너 슬라이드 */
+$('.sliderBtn div').on('click',function(){
+    let pos=$(this).index()*(-100)+'%'
+    $('.sliderList').animate({left:pos})
 
+    $('.sliderBtn div').removeClass('slideOn')
+    $(this).addClass('slideOn')
+})
 
 
 
@@ -49,6 +57,52 @@ $('#tasteRight').on('click',function(){ //첫번째이미지가 맨뒤로 append
 
 
 
+/* ------------------best-------------------- */
+
+/* $('#bestWrap>section>div>ul>li>a') 클릭시 bestProduct에 이미지 뜨게하는 클릭이벤트 */
+$('#bestWrap>section>div>ul>li>a').on('click',function(e){
+    let honeyimg=$(this).attr('href')
+    let alt=$(this).children().attr('alt')
+    $('.bestProduct').attr({src:honeyimg, alt:alt})
+    // console.log( $(this) ).attr('alt') 
+    e.preventDefault()
+})
+
+/* 각 bestdiv클릭 시 해당하는 섹션으로 이동
+예)베스트를 누르면 나머지는 사라지게 하고 베스트만 보이게 하기 */
+$('.bestdiv div').on('click',function(e){
+    let href=$(this).children().attr('href')
+    let imgPath=$(href).find('li:eq(0)').children().attr('href')
+    let num=$(this).index()
+    // console.log(imgPath)
+    $('.bestProduct').attr({src:imgPath})
+
+    $(this).parent().siblings('section').hide()
+    $(this).parent().siblings('section:eq('+num+')').show()
+
+    e.preventDefault()
+})
+
+/* 풀어서 쓰기 */
+// $('#bestWrap section:eq(1), #bestWrap section:eq(2)').hide()
+// $('.bestdiv_best').on('click',function(e){
+//     $(this).parent().siblings('section').hide()
+//     $(this).parent().siblings('section:eq(0)').show()
+//     e.preventDefault()
+// })
+// $('.bestdiv_steady').on('click',function(e){
+//     $(this).parent().siblings('section').hide()
+//     $(this).parent().siblings('section:eq(1)').show()
+//     e.preventDefault()
+// })
+// $('.bestdiv_thisweek').on('click',function(e){
+//     $(this).parent().siblings('section').hide()
+//     $(this).parent().siblings('section:eq(2)').show()
+//     e.preventDefault()
+// })
+
+
+/* bestdiv클릭 시 class이동  */
 
 
 
@@ -57,10 +111,8 @@ $('#tasteRight').on('click',function(){ //첫번째이미지가 맨뒤로 append
 
 
 
-
-
-
-/* top버튼 : 윈도우 스크롤이 #taste에 오면 나타나게하고, 그 이전이면 숨기기 */
+/*-----------------------------------퀵버튼------------------------------------- */
+/*윈도우 스크롤이 #taste에 오면 나타나게하고, 그 이전이면 숨기기 */
 $('#top').css({display:'none'})
 
 $(window).on('scroll',function(){
@@ -71,4 +123,21 @@ $(window).on('scroll',function(){
         $('#top').hide()
     }
 })
-console.log( $('main').position().top )
+// console.log( $('main').position().top )
+
+
+/*퀵버튼 토글 */
+$('.quickMenu').css({right:'-300px'})
+$('#top, .exit p').toggle(function(e){
+    $('.quickMenu').animate({right:'0px'})
+    e.preventDefault()
+},function(e){
+    $('.quickMenu').animate({right:'-300px'})
+    e.preventDefault()
+})
+/* exitX 돌아가게 만들기  */
+$('.exitX').hover(function(){
+    $(this).stop().css({animationName:'exitXrotate', animationDuration: "0.3s"})
+},function(){
+    $(this).stop().css({animationName:'exitXrotate2', animationDuration: "0.3s"})
+})

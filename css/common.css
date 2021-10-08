@@ -38,13 +38,15 @@ body{font-family: 'KOTRA_GOTHIC';}
     font-weight: normal;
     font-style: normal;
 }
-
-/*공통넓이:1280px, height값은 조절*/
+/*배경컬러*/
+/*섹션 공통넓이:1280px, height값은 조절*/
+#headerBg{position: relative; width: 100%; height: 1000px; background: #f8f8f2;}
+#middleBg{width: 100%; background: rgb(248, 248, 248);}
+#bottomBg{width: 100%; background: #f8f8f2;}
 
 /*-------------------헤더, 네비게이션-----------------------*/
-#headerBg{position: relative; width: 100%; height: 800px; background: #f8f8f2;}
 #navFix{
-    position: absolute; top: 0px; z-index: 9999;
+    position: absolute; top: 0px; z-index: 2;
     width: 100%; height: 165px; background: #f8f8f2;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); */
 }
@@ -52,13 +54,13 @@ body{font-family: 'KOTRA_GOTHIC';}
 #header h1{
     margin-bottom: 90px; 
     padding: 30px; 
-    font-size: 40px; 
+    font-size: 30px; 
     color: #45682e;
     text-align: center; 
     font-family: 'HSBombaram3_Regular';
     background: url(../images/아이콘/bee1.png) no-repeat center / cover;
-    background-size: 100px; 
-    background-position-x: 350px;
+    background-size: 70px; 
+    background-position-x: 430px;
     }
 /*고객메뉴*/
 #customerNav{position:absolute; top: 0; right: 0;}
@@ -111,7 +113,7 @@ body{font-family: 'KOTRA_GOTHIC';}
     margin: 5px;
 }
 /*각 li당 높이 50*/
-#gnbTitle>li:nth-of-type(1) ul{height: 150px;}
+#gnbTitle>li:nth-of-type(1) ul{height: 250px;}
 #gnbTitle>li:nth-of-type(2) ul{height: 250px;}
 #gnbTitle>li:nth-of-type(3) ul{height: 300px;}
 #gnbTitle>li:nth-of-type(4) ul{height: 50px;}
@@ -139,12 +141,14 @@ body{font-family: 'KOTRA_GOTHIC';}
 
 
 /*메인_슬라이더*/
-#sliderWrap{position: relative; width: 100%; height: 500px; margin: 0 auto; 
-    /* overflow: hidden; */
+#sliderWrap{position: relative; width: 100%;
+    height: 1000px; 
+    margin: 0 auto; 
+    overflow: hidden;
 }
 /* #sliderWrap p{position:absolute; top: 200px; left: 100px;} */
 .sliderList{ width: 300%; position:absolute; }
-.sliderList li{position: relative; top: 200px; width: 33.3333%; height: 400px; float: left;} /* position: relative->p태그 고정을 위해*/
+.sliderList li{position: relative; top: 200px; width: 33.3333%; height: 650px; float: left;} /* position: relative->p태그 고정을 위해*/
 .slider1{background: url(../images/편집이미지/벌3.jpg) no-repeat center / cover;}
 .slider2{background: url(../images/편집이미지/벌4.jpg) no-repeat center / cover;}
 .slider3{background: url(../images/편집이미지/벌2.jpg) no-repeat center / cover;}
@@ -158,6 +162,23 @@ body{font-family: 'KOTRA_GOTHIC';}
 .slider1 p>span{font-size: 100px;}
 .slider2 p{}
 .slider3 p{}
+
+/* .sliderPosition{ width: 100%; height: 800px; position: relative;} */
+
+.sliderBtn{ text-indent: -9999px; position: absolute; bottom: 100px; left: calc(50% - 200px); }
+.sliderBtn>div{
+   float: left; margin-right: 25px;
+    width: 80px; height: 20px; border-radius: 10px; background: #ece0c5;
+}
+.sliderBtn div.slideOn{
+    background: #91ad7f;
+}
+
+/* .btn1{left:900px;}
+.btn2{left:1000px;}
+.btn3{left:1100px;} */
+
+
 
 /*----메인시작---*/
 /*--------------------꿀추천 슬라이더----------------------*/
@@ -176,7 +197,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 } 
 #tasteBtn div{position: absolute; top: 50%; cursor: pointer;
      text-align: center; font-size: 30px;
-     color: #ffbb00; box-shadow: rgba(0,0,0,0.5);
+     /* color: #ffbb00;  */
     }
 #tasteBtn #tasteLeft{left: 150px; }
 #tasteBtn #tasteRight{right: 150px; }
@@ -189,6 +210,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 /*각 이미지 크기*/
 #list img{width: 250px; height: 300px; 
     border:1px solid #eee; 
+    background: #fff;
 } 
 
 #list ul{}
@@ -200,21 +222,50 @@ body{font-family: 'KOTRA_GOTHIC';}
 /*-----------------------------------best-----------------------------------*/
 /*프레임 다 짜먄 #best height값부터 조절하기*/
 #best{position:relative; width: 1280px; margin: 0 auto; 
-    /* background: #eee; */
+    height: 550px;
+    /* background: rgb(245, 245, 245); */
 }
 #bestWrap{}
-#bestWrap h3{font-size: 30px;}
-#bestWrap p{font-size: 20px;}
-#bestList{position:relative; width: 750px; margin-left: 450px; 
-    /* background: rgb(255, 191, 191); */
-}
+#bestWrap h3{font-size: 30px; position: absolute; top: 0px;}
+#bestWrap p{font-size: 20px; position: absolute; top: 50px;}
+
+
 #bestList li{}
 #bestList li a{}
-#bestList li a img{width: 180px; height: 180px; border: 1px solid #eee;}
-.bestProduct{position: absolute; top: 27px; left: 200px; width: 500px; height: 500px; border: 1px solid #eee; }
-#bestOne{}
-#bestOne img{}
-#bestOne a{display: block; color: #000; position: absolute; bottom: 0; left: 830px;}
+
+
+/*각 section 공통적용 */
+#bestWrap>section{
+    position:absolute; top: 0;
+    width: 750px; margin-left: 450px; 
+}
+
+#bestWrap>section>div li a img{width: 180px; height: 160px; border: 1px solid #eee; background: #fff;}
+#bestWrap>section>div .bestProduct{position: absolute; top: 0px; left: 200px; width: 500px; height: 500px; border: 1px solid #eee; background: #fff;}
+#bestWrap>section>div{}
+
+
+
+#bestOne a{display: block; color: #000; width: 220px; height: 50px;
+    position: absolute; bottom: 200px; left: 0px;
+    font-size: 20px;
+    background: url(../images/아이콘/next.png) no-repeat center / cover;
+    background-size: 25px 25px; background-position: 160px 0px;
+}
+
+
+
+/* #bestList li a img{width: 180px; height: 160px; border: 1px solid #eee;}
+.bestProduct{position: absolute; top: 0px; left: 200px; width: 500px; height: 500px; border: 1px solid #eee; }
+#bestOne a{display: block; color: #000; position: absolute; bottom: 0; left: 830px;} */
+
+.bestdiv{position: absolute; top: 80px; left: -10px;}
+.bestdiv>div{width: 300px; height: 50px; background: #ffbb00; margin: 10px; border-radius: 3px;}
+.bestdiv>div>a{display: block; color: #fff; font-size: 20px; text-align: left; 
+    font-weight: bold; padding-left: 10px; line-height: 50px;}
+
+
+
 
 
 /*-------------------------추천팁, 할인섹션----------------------------*/
@@ -268,11 +319,13 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #howTo p{
     /* width: 1280px; height: 130px;  */
     text-align: center;
-    /* position: absolute; top: 0; right: 0; */
-    font-family: 'InkLipquid'; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
-    font-size: 40px; margin-right: 100px; line-height: 130px; color: #eee;
+    position: relative; top: 100px; right: 30px;
+    /* font-family: 'InkLipquid';  */
+    letter-spacing: -5px;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+    font-size: 40px; margin-right: 100px; line-height: 130px; color: rgb(70, 70, 70);
     background: url(../images/아이콘/bee2.png) no-repeat center / cover;
-    background-size: 60px 60px; background-position-x: 1170px;
+    background-size: 60px 60px; background-position-x: 1270px;
 }
 
 
@@ -306,9 +359,7 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
     position: absolute; bottom: 170px; right: 0;
     background-size: 50px 50px;
 }
-#native span{
-
-}
+#native span{}
 
 #farmBtn{}
 #farmBtn>div{
@@ -337,9 +388,31 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
     /* margin: 60px auto;  */
 }
 #needWrap>div{
-    width: 250px; height: 250px;border-radius: 5px; margin-top: 40px;
+    position: relative; transition:0.3s; 
+    width: 250px; height: 250px;border-radius: 5px; margin-top: 40px; 
 }
-#needWrap>div>a{display: block; color: #000; text-align: center; line-height: 200px;}
+#needWrap>div:hover::after{
+    content: ""; display: block; 
+    position: absolute; top: 0; left: 0; border-radius: 5px;
+    width: 250px; height: 250px; background: rgba(0,0,0,0.3);
+}
+
+
+
+#needWrap>div>a{
+    position: relative; z-index: 1;
+    display: block; color: #fff; text-align: center; line-height: 200px; 
+    font-size: 20px; transition:0.3s; 
+    opacity: 0;}
+#needWrap>div:hover a{opacity: 1;}
+#needWrap>div>a::after{
+    content: ""; display: block;
+    position: absolute; top: 130px; left: 25%;
+    width: 0; 
+    height: 1px; background: #fff;}
+#needWrap>div:hover>a::after{width: 50%;font-weight: bold; transition: 1s;}
+
+
 #need #need1{background: url(../images/편집이미지/면역력.jpg) no-repeat center / cover;}
 #need #need2{background: url(../images/편집이미지/꿀단지2.jpg) no-repeat center / cover;}
 #need #need3{background: url(../images/편집이미지/선물1.jpg) no-repeat center / cover;}
@@ -349,24 +422,24 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 
 /*----------------------#customer 고객편의-----------------------------*/
 #customer{position: relative; width: 1280px; height: 280px; margin: 0 auto; 
-    /* background: rgb(179, 179, 179); */
+    background: rgb(255, 255, 255);
     padding-top: 50px;}
 
 #customer h3{}
 #customerWrap{}
 /*notice:공지사항 전체크기*/
-#notice{width: 400px; height: 250px; background: #fff;  }
+#notice{width: 400px; height: 250px; }
 #notice h4{
     
 }
-#notice h4 a{display: block; font-size: 50px; color: #000; 
+#notice h4 a{display: block; font-size: 30px; color: #000; 
     margin-left: 60px;
     margin-bottom: 50px;
     background: url(../images/아이콘/next.png) no-repeat center / cover;
     background-size: 25px 25px; background-position-x: 300px; background-position-y: 25px;
 }
 #tableWrap{}
-#tableWrap li{text-align: left; margin: 20px;}
+#tableWrap li{text-align: left; }
 #tableWrap li a{display: block; color: #000;}
 #tableWrap li span{color: #ffbb00;display: block; text-align: right; margin-top: -20px;}
 
@@ -386,13 +459,64 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 background-size: 150px 150px; background-position-y: 10px;}
 #customerCenter p{position: absolute; bottom: 25px; left: 45px; font-size: 25px;}
 
-#delivery>div{width: 250px; height: 250px; background: paleturquoise; float: left; margin-right: 10px;}
+#delivery>div{width: 250px; height: 250px; float: left; margin-right: 10px;}
 #delivery div{width: 250px; height: 300px; background: url(../images/아이콘/delivery-truck.png) no-repeat center / cover;
 background-size: 150px 150px; background-position-y: 10px;}
 
-#shopping>div{width: 250px; height: 250px; background: paleturquoise; float: left; margin-right: 10px;}
+#shopping>div{width: 250px; height: 250px; float: left; margin-right: 10px;}
 #shopping div{width: 250px; height: 300px; background: url(../images/아이콘/shopping-cart.png) no-repeat center / cover;
 background-size: 150px 150px; background-position-y: 10px;}
+
+/*-----------------퀵메뉴 (sorbus 사이트 참고) -------------------*/
+.quickMenu{width: 300px; height: 100vh; background: #ffffff;
+    position: fixed; top:0; right: 0; z-index: 2;
+    box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.1);
+}
+.inner{ }
+.quickList{width: 200px; position: absolute; top: 300px;padding-left: 5px;}
+.quickList ul{}
+.quickList ul li{height: 50px; font-size: 22px; letter-spacing: -1px; text-transform: uppercase;}
+.quickList ul li a{color: #000;}
+
+/*퀵헤드 오른쪽 여백*/
+.quickHead{width: 100px; height: 100vh; background: #f8f8f2;
+    position: absolute; top:0; right: 0; margin-top: 0px; border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+.quickHead>p{
+    font-size: 60px; 
+    transform: rotate(90deg);
+    width: 500px; 
+    position: absolute; top:350px; right: -200px;
+}
+
+.exit{position: absolute; top: 500px; right: 30px;}
+.exitX{
+    position: absolute; top: 0px; right: -10px;
+    width: 60px; height: 60px; text-indent: -9999px;
+    background: url(../images/아이콘/exit2.png) no-repeat center / cover;
+}
+@keyframes exitXrotate{to{transform: rotate(180deg)}}
+@keyframes exitXrotate2{to{transform: rotate(-180deg)}}
+
+.exit p{
+    cursor: pointer;
+    margin-top: 80px;
+    margin-right: -10px;
+    font-size: 30px;}
+
+
+
+/*퀵버튼*/
+#top{display: block; width: 60px; height: 60px; font-family: 'Pretendard-Regular';
+    position: fixed; bottom: 50px; right: 310px;
+    background: rgba(223, 223, 223,0.6); border-radius: 20px; text-align: center; line-height: 60px;
+    color: rgb(122, 117, 117); font-weight: normal; font-size: 18px; transition: 0.3s;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+/* background: url(../images/아이콘/nextcircle.png) no-repeat center / cover;
+transform: rotate(270deg); */
+}
+#top:hover{background: #ffe49c;}
+
 
 
 /*-----------------푸터-------------------*/
@@ -408,13 +532,3 @@ background: url(../images/아이콘/bee1.png)no-repeat center / cover; backgroun
 
 
 
-/*탑버튼*/
-#top{display: block; width: 70px; height: 70px; font-family: 'Pretendard-Regular';
-    position: fixed; bottom: 50px; right: 100px;
-    background: rgba(223, 223, 223,0.6); border-radius: 20px; text-align: center; line-height: 70px;
-    color: #fff; font-weight: normal; font-size: 18px; transition: 0.3s;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-/* background: url(../images/아이콘/nextcircle.png) no-repeat center / cover;
-transform: rotate(270deg); */
-}
-#top:hover{background: #ffe49c;}
