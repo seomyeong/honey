@@ -21,20 +21,13 @@ body{font-family: 'KOTRA_GOTHIC';}
     font-style: normal;
 }
 @font-face {
-    font-family: 'HSBombaram3_Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.1/HSBombaram3_Regular.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'InkLipquid';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: '행복고흥L';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/행복고흥L.woff') format('woff');
+}@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -45,23 +38,15 @@ body{font-family: 'KOTRA_GOTHIC';}
 #bottomBg{width: 100%; background: #f8f8f2;}
 
 /*-------------------헤더, 네비게이션-----------------------*/
-#navFix{
-    position: absolute; top: 0px; z-index: 2;
-    width: 100%; height: 115px; background: #f8f8f2;
-}
+#navFix{position: fixed; top: 0px; z-index: 2;
+        width: 100%; height: 115px; background: #f8f8f2;}
 #header{position: relative; width: 1280px; margin:0 auto;}
 #header h1{
-    /* margin-bottom: 90px;  */
-    padding: 0 0 0 60px; 
     position: absolute; top: 15px; left: -50px;
-    font-size: 30px; 
-    color: #45682e;
-    /* text-align: center;  */
-    font-family: 'HSBombaram3_Regular';
-    background: url(../images/icon/bee1.png) no-repeat center / cover;
-    background-size: 70px; 
-    background-position-x: 0px;
-    }
+    font-family: 'RIDIBatang';
+    padding: 0 0 0 60px; font-size: 30px; color: #45682e;
+    background: url(../images/icon/bee1.png) no-repeat center / cover; 
+    background-size: 70px; background-position-x: 0px;}
 /*고객메뉴*/
 #customerNav{position:absolute; top: 0; right: -10px;}
 #customerNav li{float: left; font-size: 11px; margin: 10px 3px 0 0;}
@@ -69,43 +54,34 @@ body{font-family: 'KOTRA_GOTHIC';}
 #customerNav li:nth-of-type(1)::after{
     content: ""; display: block; height: 13px;
     border-right: 1px solid #cacaca; padding-left: 35px;
-    margin-top: -15px;
-}
+    margin-top: -15px;}
 #customerNav li:nth-of-type(2)::after{
     content: ""; display: block; height: 13px;
     border-right: 1px solid #cacaca; padding-left: 43px;
-    margin-top: -15px;
-}
+    margin-top: -15px;}
 
 /*personalZone icon*/
-/* #personalZone{width: 1280px; margin: 0 auto; } */
-#personalZone>a{width: 30px; height: 30px; position: absolute; top: 50px; right: 0px;}
-#personalZone #search{background: url(../images/icon/search.png) no-repeat center / cover; right: 90px;}
-#personalZone #cart{background: url(../images/icon/shopping-cart2.png) no-repeat center / cover; right: 40px;}
-#personalZone #personal{background: url(../images/icon/personal.png) no-repeat center / cover; right: -10px;}
-
+#personalZone>a{width: 25px; height: 25px; position: absolute; top: 55px; right: 0px; z-index: 1;}
+#personalZone #search{background: url(../images/icon/search.png) no-repeat center / cover; right: 0px;}
+#personalZone #cart{background: url(../images/icon/shopping-cart2.png) no-repeat center / cover; right: -45px;}
+#personalZone #personal{background: url(../images/icon/personal.png) no-repeat center / cover; right: -80px;}
 
 
 /*주요메뉴 -> gnb에 position:absolute로 영역이 밀리지않게 */
 #gnb{position: absolute; top: 50px; left: calc(50% - 400px);}
-#gnb ul li{ 
-    width: 160px;
-    float: left;
-    text-align: center;
-}
+#gnb ul li{ width: 160px; float: left;
+    text-align: center;}
 /*주요메뉴-상단메뉴*/
 #gnbTitle>li>a{
     color: #000;
     font-size: 17px; 
     font-weight: bold; margin: 0 20px; transition: 0.3s;} 
 #gnbTitle>li>a:hover{color: #ffbb00; }
-    
 #gnbTitle ul{
     position: relative; z-index: 1;
     background:#fff;
     border-radius: 30px;
-    margin: 5px;
-}
+    margin: 5px;}
 /*각 li당 높이 50*/
 #gnbTitle>li:nth-of-type(1) ul{height: 250px;}
 #gnbTitle>li:nth-of-type(2) ul{height: 250px;}
@@ -114,34 +90,31 @@ body{font-family: 'KOTRA_GOTHIC';}
 #gnbTitle>li:nth-of-type(5) ul{height: 200px;}
 /*주요메뉴-하위메뉴*/
 #gnbTitle ul li a{ 
-    /* display:none;  */
     position: relative;
     color: #000; 
     height: 50px; 
     line-height: 50px;
     margin-left: -5px;
-    font-size: 15px;
-} 
+    font-size: 15px;} 
 #gnbTitle ul li a::after{ /*a내에 설정하는거기때문에 a에 relative가 있어야 함. 가상요소는 js, jquery의 대상이될 수 없다. 그래서 움직이려면 css의 animation으로 움직여야 함*/
     content:""; 
     position: absolute; top:20px; left:50%;
     width:0; height:5px; background:#f7d67b;
-    border-radius: 500px;
-}
+    border-radius: 500px;}
 #gnbTitle ul li:hover>a::after{width:100%; left:0; transition:0.5s;}
-/* #gnbTitle ul li a:hover{font-size: 17px; font-weight: bold; transition: 0.5s;} */
-
-/* #gnb input{position: absolute; top: 65px; right: 0;} */
-
-
+#gnb input{position: absolute; top: 0px; right: -250px;
+    width: 250px; height: 35px; padding: 10px; background: #eee;
+    border-radius: 25px; border: 2px solid #ffd45c;
+}
+#gnb input:focus{
+    outline: #e1ffcd;
+    border: 2px solid #accf95;}
 
 /*메인_슬라이더*/
 #sliderWrap{position: relative; width: 100%;
     height: 1000px; 
     margin: 0 auto; 
-    overflow: hidden;
-}
-/* #sliderWrap p{position:absolute; top: 200px; left: 100px;} */
+    overflow: hidden;}
 .sliderList{ width: 300%; position:absolute; top: 120px; left: 0; }
 .sliderList li{position: relative; width: 33.3333%; height: 550px; float: left;} /* position: relative->p태그 고정을 위해*/
 
@@ -173,7 +146,6 @@ body{font-family: 'KOTRA_GOTHIC';}
 #slider2_txt p:nth-of-type(1){font-size: 25px;}
 #slider2_txt p:nth-of-type(2){font-size: 65px; color: #684d2e;}
 #slider2_txt p:nth-of-type(3){font-size: 22px;}
-/* #slider2_txt p:nth-of-type(4){font-weight: normal;} */
 #slider2_txt a{display: block; margin: 0 auto; width: 130px; height: 30px; border: 1px solid #684d2e;
     color: #684d2e; font-weight: bold; text-align: center; line-height: 30px; margin-top: 20px;}
 
@@ -187,21 +159,16 @@ body{font-family: 'KOTRA_GOTHIC';}
 #slider3_txt{
     position: absolute; top: 210px; left: calc(40% - 200px);
     font-weight: bold; text-align: center;}    
-#slider3_txt p:nth-of-type(1){}    
 #slider3_txt p:nth-of-type(2){font-size: 55px; letter-spacing: -2px; color: #ffbb00;}    
 #slider3_txt p:nth-of-type(3){font-size: 25px;}    
 #slider3_txt a{display: block; margin: 60px auto 0; width: 130px; height: 30px; border: 1px solid #684d2e;
-    color: #684d2e; font-weight: bold; text-align: center; line-height: 30px; }
-
+                color: #684d2e; font-weight: bold; text-align: center; line-height: 30px; }
 
 .sliderBtn{ text-indent: -9999px; position: absolute; bottom: 280px; left: calc(50% - 150px); }
 .sliderBtn>div{
    float: left; margin-right: 25px;
-    width: 80px; height: 20px; border-radius: 10px; background: #ece0c5;
-}
-.sliderBtn div.slideOn{
-    background: #91ad7f;
-}
+    width: 80px; height: 20px; border-radius: 10px; background: #ece0c5;}
+.sliderBtn div.slideOn{ background: #91ad7f; }
 
 
 /*----메인시작---*/
@@ -209,47 +176,34 @@ body{font-family: 'KOTRA_GOTHIC';}
 #taste{ position:relative; top: 0px; margin: 0 auto;
     width: 1280px; height: 550px;
 }
-#tasteWrap{
-    position: relative;
-}
+#tasteWrap{ position: relative;}
 #tasteWrap h3{text-align: center; line-height: 110px; font-weight: 100; font-size: 40px;}
 #tasteWrap h3 span{color: #ffbb00; font-weight: bold; font-size: 50px;}
 #shoppingWrap{ /*이미지 3개가 보여질 넓이*/
     width: 815px; height: 390px; margin: 0 auto; 
-    overflow: hidden;
-} 
+    overflow: hidden;} 
 #tasteBtn div{position: absolute; top: 50%; cursor: pointer;
-     text-align: center; font-size: 30px;
-    }
+     text-align: center; font-size: 30px;    }
 #tasteBtn #tasteLeft{left: 150px; }
 #tasteBtn #tasteRight{right: 150px; }
 
 /*기본:1350. 이미지 전체가 담길 넓이*/
 /* #list : a태그 아래 p태그 속성 설정가능 */
-#list{width: 1360px; text-align: center; 
-    color: #5f5f5f;
-} 
+#list{width: 1360px; text-align: center; color: #5f5f5f;} 
 
 /*listWish 찜icon*/
 #list .listWish{
     position: absolute; top: 20px; right: 10px;
     width: 40px; height: 40px; 
-    /* border: 1px solid rgb(207, 207, 207); */
-    background: url(../images/icon/wish1.png) no-repeat center / cover;
-}
-#list .listWish:hover{
-    background: url(../images/icon/wish1-2.png) no-repeat center / cover;
-}
+    background: url(../images/icon/wish1.png) no-repeat center / cover;}
+#list .listWish:hover{ background: url(../images/icon/wish1-2.png) no-repeat center / cover;}
 
 /*각 이미지 크기*/
 #list img{width: 250px; height: 300px; 
     border:1px solid #dbdbdb; 
-    background: #fff;
-} 
+    background: #fff;} 
 
-#list ul li{
-    position: relative; 
-    float: left; margin: 0 10px;}
+#list ul li{position: relative; float: left; margin: 0 10px;}
 #list ul li a{display: block; color: #000000; text-align: center; font-size: 23px; font-weight: bold; margin: 10px 0 1px 0;}
 
 /*-----------------------------------best-----------------------------------*/
@@ -262,16 +216,12 @@ body{font-family: 'KOTRA_GOTHIC';}
     position:absolute; top: 0;
     width: 750px; margin-left: 450px; }
 #bestWrap>section>div li{width: 220px; height: 200px; margin-bottom:5px; border: 1px solid #dbdbdb; background: #fff; text-align: center;}
-#bestWrap>section>div li a img{width: 180px; height: 140px; 
-/* border: 1px solid #dbdbdb; */
-position: relative; top: -40px;
-}
+#bestWrap>section>div li a img{width: 180px; height: 140px; position: relative; top: -40px;}
 #bestWrap>section>div .bestProduct{position: absolute; top: 0px; right: 0px; width: 500px; height: 500px; border: 1px solid #dbdbdb; background: #fff;}
 
 #bestOne a{display: block; color: rgb(77, 77, 77); width: 300px; height: 50px;
     position: absolute; bottom: 70px; right: 180px;
     font-size: 24px; letter-spacing: -2px; text-align: center; line-height: 50px;
-    /* border: 1px solid #dbdbdb; border-radius: 15px; */
     background:  url(../images/icon/next.png) no-repeat center / cover;
     background-size: 20px 20px; background-position: 270px 15px;}
 
@@ -284,8 +234,7 @@ position: relative; top: -40px;
     font-weight: bold; padding-left: 10px; line-height: 50px;
     width: 300px; height: 50px;
     position: absolute; top: 0; 
-    z-index: 1;
-}
+    z-index: 1;}
 /*bestList>p태그*/
 #bestWrap>section>div ul>li>a>p{color: #000; margin-left: 50px; } 
 #bestWrap>section>div ul>li>a>p:nth-of-type(1){font-size: 24px; font-weight: bold; letter-spacing: -1.5px;}
@@ -301,25 +250,17 @@ position: relative; top: -40px;
 /*best listWish*/
 #bestWrap>section>div .bestWish{
     position: relative; top: 0px; left: 180px; 
-    /* z-index: 1; */
     width: 40px; height: 40px; 
-    background: url(../images/icon/wish1.png) no-repeat center / cover;
-}
+    background: url(../images/icon/wish1.png) no-repeat center / cover;}
 #bestWrap>section>div .bestWish:hover{
-    background: url(../images/icon/wish1-2.png) no-repeat center / cover;
-}
-
-
+    background: url(../images/icon/wish1-2.png) no-repeat center / cover;}
 
 /*-------------------------추천팁, 할인섹션----------------------------*/
 /*꿀팁*/
-#tip_sale{position:relative; width: 1280px; height: 600px; 
-    /* background: #ffead8;  */
-    margin: 0 auto;}
+#tip_sale{position:relative; width: 1280px; height: 600px; margin: 0 auto;}
 #tip_sale article{float: left; margin-left: 100px;}
 #tip_sale h4{font-size: 40px; text-align: center; padding: 20px;}
 #honeyTip{width: 500px; height: 500px;}
-#honeyTip h4{}
 #honeyTip div:nth-of-type(1){width: 400px; height: 400px; background: url(../images/editPhoto/요리4.jpg) no-repeat center / cover;
 border-radius: 50%;}
 #honeyTip div:nth-of-type(2){width: 170px; height: 170px; background:url(../images/editPhoto/요리2.jpg) no-repeat center / cover;
@@ -329,45 +270,29 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
     width: 25px; height: 25px; background:url(../images/icon/nextcircle.png) no-repeat center / cover;
     text-indent: -9999px;}
 
-
-
-#timedeal{
-    position: relative;
-    width: 500px; height: 500px; margin-left: 120px; text-align: center;
-    /* background: rgb(187, 171, 171);  */
-}
-#timedeal h4{
-}
+#timedeal{position: relative;
+    width: 500px; height: 500px; margin-left: 120px; text-align: center;}
 #timedeal #alarm{
     width: 50px; height: 50px;
     position: absolute; top: 20px; left: 90px;
     background:url(../images/icon/alarm-clock2.png) no-repeat center / cover;
     background-size: 50px 50px;}
 
-
-
 #timedeal img{width: 300px; height: 350px;}
 #timedeal a{display:block; text-align: center; color: #000; font-size: 20px; margin-top: 0px;}
-#timedeal a>span{display:inline-block;
-    width: 25px; height: 25px; background:url(../images/icon/nextcircle.png) no-repeat center / cover;
-    text-indent: -9999px;}
+#timedeal a>span{display:inline-block; text-indent: -9999px;
+    width: 25px; height: 25px; background:url(../images/icon/nextcircle.png) no-repeat center / cover; }
 #timedeal #dealCount{font-weight: bold; font-size: 25px;}
 
-
 #howTo{
-    /* margin: 30px 0; */
     position: relative;
     text-align: right;
     width: 100%; height: 300px; 
     background: #fff5df url(../images/editPhoto/1-001.png) no-repeat center / cover;
     border-top: 6px solid #ffeebf;
-    border-bottom: 6px solid #ffeebf;
-}
+    border-bottom: 6px solid #ffeebf;}
 #howTo p{
-    /* position: relative; */
-    font-weight: bold;
-    text-align: center; letter-spacing: -5px;
-    /* text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); */
+    font-weight: bold; text-align: center; letter-spacing: -5px;
     font-size: 40px; margin-left: 600px; line-height: 300px; color: #494034;
 }
 #howTo p::after{
@@ -378,47 +303,30 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #howTo a{
     position: absolute; top: 180px; left: calc(50% - -500px);
     display: block; color: #fff; width: 80px; height: 30px; background: #ffbb00;
-    text-align: center; line-height: 30px; border-radius: 3px;
-}
+    text-align: center; line-height: 30px; border-radius: 3px;}
 
 
 /*---------------------------꿀의 효능_토종꿀 소개-----------------------*/
 #native{ position: relative; left: 0px;
-    width: 1280px; height: 700px; margin: 0 auto; 
-    /* width: 800px; height: 700px; margin: 0 auto;  */
-    /* padding-top: 30px; */
-}
+    width: 1280px; height: 700px; margin: 0 auto; }
 
-#farmWrap{width: 800px; height: 600px; 
-    overflow: hidden; }
+#farmWrap{width: 800px; height: 600px; overflow: hidden; }
 #farmWrap li.zIndex{position: absolute; top: 30px; z-index: 1;}
 
-
-#farmWrap ul li{
-    width: 800px;
-    position: absolute; top: 30px;}
+#farmWrap ul li{ position: absolute; top: 30px; width: 800px; }
 #farmWrap ul li img{width: 800px; height: 600px; border-radius: 20px 20px; float: left; }
 
-
 #farmTxt{width: 450px; position: absolute; top: 200px; right: 0px;}
-#farmTxt p{
-    /* font-weight: bold; */
-    text-align: left; float: right; font-size: 15px;
-}
+#farmTxt p{ text-align: left; float: right; font-size: 15px;}
 
-#farmTxt a{position:absolute; top: 270px;  right:40px; color: #000; font-size: 20px;
+#farmTxt a{position:absolute; top: 270px;  right:40px; color: rgb(0, 0, 0); font-size: 20px;
     display: block;  font-weight: bold;
-    width: 100px; height: 30px; background: rgba(255, 255, 255,0.8);
-}
+    width: 100px; height: 30px; }
 #farmTxt #readHoneyComb{
     width: 100px; height: 100px;
     background:url(../images/icon/honeycomb2.png) no-repeat center / cover;
-    position: absolute; top: 230px; right: 0;
-    background-size: 50px 50px;
-}
-#native span{}
-
-#farmBtn{}
+    position: absolute; top: 225px; right: -20px;
+    background-size: 50px 50px;}
 #farmBtn>div{
     position: absolute; top: 650px; cursor: pointer; text-indent: -9999px;
     width: 18px; height: 18px; background: #ffeab2; border-radius: 50%; float: left; margin: 10px 0 0 10px;}
@@ -428,25 +336,17 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #farmBtn div.farmBtnOn{background:#ffcd42;}
 
 
-
-
 /*----------------------#need 어떤 꿀이 필요하세요?--------------------*/
-#need{width: 1280px; height: 400px; margin: 0 auto; 
-    /* background: skyblue;  */
-}
+#need{width: 1280px; height: 500px; margin: 50px auto 0; }
 #need h3{font-size: 35px; text-align: center;}
 #needWrap{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: center;
-    /* width: 1100px; height: 400px; */
-    /* background: rgb(182, 157, 157);  */
-    /* margin: 60px auto;  */
-}
+    align-items: center;}
 #needWrap>div{
     position: relative; transition:0.3s; 
-    width: 250px; height: 250px;border-radius: 5px; margin-top: 40px; 
+    width: 250px; height: 250px; border-radius: 5px; margin-top: 40px; 
 }
 #needWrap>div:hover::after{
     content: ""; display: block; 
@@ -464,10 +364,10 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #needWrap>div:hover a{opacity: 1;}
 #needWrap>div>a::after{
     content: ""; display: block;
-    position: absolute; top: 130px; left: 25%;
+    position: absolute; top: 130px; left: 10%;
     width: 0; 
     height: 1px; background: #fff;}
-#needWrap>div:hover>a::after{width: 50%;font-weight: bold; transition: 1s;}
+#needWrap>div:hover>a::after{width: 80%; font-weight: bold; transition: 1s;}
 
 
 #need #need1{background: url(../images/editPhoto/면역력.jpg) no-repeat center / cover;}
@@ -479,8 +379,7 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 
 /*----------------------#customer 고객편의-----------------------------*/
 #customer{position: relative; width: 1280px; height: 280px; margin: 0 auto; 
-    background: rgb(255, 255, 255);
-    padding-top: 50px;}
+    background: rgb(255, 255, 255); padding-top: 50px;}
 
 #customer h3{}
 #customerWrap{}
@@ -532,7 +431,7 @@ background-size: 150px 150px; background-position-y: 10px;}
 .inner{ }
 .quickList{width: 200px; position: absolute; top: 300px;padding-left: 5px;}
 .quickList ul{}
-.quickList ul li{height: 50px; font-size: 22px; letter-spacing: -1px; text-transform: uppercase;}
+.quickList ul li{height: 50px; font-size: 15px; letter-spacing: -1px; text-transform: uppercase;}
 .quickList ul li a{color: #000;}
 
 /*퀵헤드 오른쪽 여백*/
@@ -540,7 +439,7 @@ background-size: 150px 150px; background-position-y: 10px;}
     position: absolute; top:0; right: 0; margin-top: 0px; border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 .quickHead>p{
-    font-size: 60px; 
+    font-size: 60px; color: #45682e;
     transform: rotate(90deg);
     width: 500px; 
     position: absolute; top:350px; right: -200px;
@@ -549,7 +448,7 @@ background-size: 150px 150px; background-position-y: 10px;}
 .exit{position: absolute; top: 500px; right: 30px;}
 .exitX{
     position: absolute; top: 0px; right: -10px;
-    width: 60px; height: 60px; text-indent: -9999px;
+    width: 60px; height: 60px;
     background: url(../images/icon/exit2.png) no-repeat center / cover;
 }
 @keyframes exitXrotate{to{transform: rotate(180deg)}}
@@ -565,8 +464,8 @@ background-size: 150px 150px; background-position-y: 10px;}
 
 /*퀵버튼*/
 #top{display: block; width: 60px; height: 60px; font-family: 'Pretendard-Regular';
-    position: fixed; bottom: 50px; right: 310px;
-    background: rgba(223, 223, 223,0.6); border-radius: 20px; text-align: center; line-height: 60px;
+    position: fixed; bottom: 50px; right: 100px;
+    background: rgba(223, 223, 223,0.6); border-radius: 5px; text-align: center; line-height: 25px;
     color: rgb(122, 117, 117); font-weight: normal; font-size: 18px; transition: 0.3s;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 /* background: url(../images/icon/nextcircle.png) no-repeat center / cover;
@@ -580,7 +479,7 @@ transform: rotate(270deg); */
 #footer{width: 100%; height: 180px; background: rgb(121, 121, 121);}
 #footerWrap{width: 1280px; margin: 0 auto;}
 #footerWrap p, #footer address{color: #cac4c4; font-style: normal;}
-#footer p:nth-of-type(1){color: #45682e;text-align: center; font-size: 20px; font-family: 'HSBombaram3_Regular'; padding: 10px 0;
+#footer p:nth-of-type(1){color: #45682e;text-align: center; font-size: 20px; font-family: 'RIDIBatang'; padding: 10px 0;
 background: url(../images/icon/bee1.png)no-repeat center / cover; background-size: 50px 50px; background-position-x: 500px;}
 #footer p:nth-of-type(2){}
 #footer p:nth-of-type(3){}

@@ -1,13 +1,9 @@
+$('a').on('click',function(e){
+    e.preventDefault()
+})
+
 /*--------------------슬라이드----------------------- */
 $('.snb').hide()
-
-/* 주요네비-전체내리기 */
-// $('#gnbTitle').hover(function(){
-//     $('.snb').stop().slideDown(500)
-// }, function(){
-//     $('.snb').stop().slideUp(500)
-// })
-
 /* 주요네비-개별 내리기 */
 $('#gnbTitle>li').on('mouseenter',function(){
     $('.snb').not( $(this).children('.snb') ).hide()
@@ -17,21 +13,16 @@ $('#gnbTitle>li').on('mouseleave',function(){
     $('.snb').stop().slideUp(300)
 })
 
-/* nav - 스크롤 한번 내리면 fix시키기 */
-// $(window).on('scroll',function(){
-//     $('#navFix').css({position:'fixed',boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
-// })
-
-let state=1
-document.addEventListener('wheel',function(e){
-    if(e.wheelDelta<0 && state==1){
-        state=0
-        $('#navFix').css({position:'fixed',boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
-    }else if(e.wheelDelta>0 && state==0){
-        $('#navFix').css({position:'fixed',boxShadow:'0 0 0px'})
-        state=1
+/* nav - 스크롤 내리면 shadow효과 적용 */
+$(window).on('scroll',function(){
+    console.log( $(window).scrollTop() )
+    if( $(window).scrollTop() >= 50 ){
+        $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
+    }else{
+        $('#navFix').css({boxShadow:'0 0 0px'})
     }
 })
+
 /* 메인배너 슬라이드 */
 var num=0; //변수 num은 slideOn클래스 이동을 위한 변수
 let liWidth=$('.sliderList').width()
@@ -104,9 +95,9 @@ $('#bestWrap>section>div>ul>li>a').on('click',function(e){
 예)베스트를 누르면 나머지는 사라지게 하고 베스트만 보이게 하기 */
 $('.bestdiv div').on('click',function(e){
     let href=$(this).children().attr('href')
-    let imgPath=$(href).find('li:eq(0)').children().attr('href')
+    let imgPath=$(href).find('li:eq(0)').children('a').attr('href')
     let num=$(this).index()
-    // console.log(imgPath)
+    console.log(imgPath)
     $('.bestProduct').attr({src:imgPath})
 
     $(this).parent().siblings('section').hide()
