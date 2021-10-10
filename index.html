@@ -15,20 +15,19 @@
     <div id="headerBg">
         <div id="navFix">
             <header id="header">
-                <h1>지리산 꽃꿀 산사람농원</h1>
+                <h1>지리산 꽃꿀<br>산사람농원</h1>
                 <nav id="customerNav">
                     <h2 class="hidden">고객메뉴</h2>
                     <ul>
                         <li><a href="#">로그인</a></li>
-                        <li><a href="#">장바구니</a></li>
                         <li><a href="#">고객센터</a></li>
                         <li><a href="#">배송조회</a></li>
                     </ul>
                 </nav>
                 <div id="personalZone">
-                    <div id="search"></div>
-                    <div id="cart"></div>
-                    <div id="personal"></div>
+                    <a href="#" id="search"></a>
+                    <a href="#" id="cart"></a>
+                    <a href="#" id="personal"></a>
                 </div>
                 <nav id="gnb">
                     <h2 class="hidden">주요메뉴</h2>
@@ -81,19 +80,43 @@
         </div>
     <section id="sliderWrap">
         <h2 class="hidden">메인배너</h2>
-        <!-- <p>3대째 이어온 꽃꿀 전문농원의 자존심을 지키겠습니다.</p> -->
-        <!-- <div class="sliderPosition"> -->
             <ul class="sliderList">
-                <li class="slider1"><p><span>3</span>대째 이어온<br>꽃꿀 전문농원의 자존심을<br>지키겠습니다.</p></li>
-                <li class="slider2"><p>(백그라운드이미지 2)</p></li>
-                <li class="slider3"><p>(백그라운드이미지 3)</p></li>
+                <li class="slider1">
+                    <div id="slider1_img"></div>
+                    <div id="slider1_txt">
+                        <p>EVENT</p>
+                        <p>참여시 100% 당첨</p>
+                        <p>홈페이지 새단장 기념 이벤트</p>
+                        <p>후기를 남기고 선물 받아가세요!</p>
+                        <p>2021.10.01(금)~2021.12.31(금)</p>
+                        <a href="#">이벤트 바로가기</a>
+                    </div>
+                </li>
+                <li class="slider2">
+                    <div id="slider2_img"></div>
+                    <div id="slider2_txt">
+                        <p>지리산 무공해 청정지역에서 채취한</p>
+                        <p>&ldquo; 아카시아꿀 &rdquo;</p>
+                        <p>구매시 꿀수저 1개 증정!</p>
+                        <p>#금수저 대신 꿀수저</p>
+                        <a href="#">바로가기</a>
+                    </div>
+                </li>
+                <li class="slider3">
+                    <div id="slider3_img"></div>
+                    <div id="slider3_txt">
+                        <p>NEW ARRIVAL</p>
+                        <P>지리산 청정 벌집꿀</P>
+                        <p>이제 벌집채로 드세요!</p>
+                        <a href="#">바로가기</a>
+                    </div>
+                </li>
             </ul>
             <div class="sliderBtn">
                 <div class="btn1 slideOn">1</div>
                 <div class="btn2">2</div>
                 <div class="btn3">3</div>
             </div>
-        <!-- </div> -->
     </section>
 </div>
     <main id="main">
@@ -108,11 +131,18 @@
                         </div>
                         <div id="list">
                             <ul>
-                                <li><a href="#"><img src="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원"><p>아카시아꿀</p></a><p>대중적인 맛을 원한다면</p></li>
-                                <li><a href="#"><img src="images/상품리스트/밤꿀2_4kg_60000원.png" alt="밤꿀2.4kg 60000원"><p>밤꿀</p></a><p>진한 향을 즐기고 싶다면</p></li>
-                                <li><a href="#"><img src="images/상품리스트/토종꿀2_4kg_58,000원.png" alt="토종꿀2.4kg 58000원"><p>토종꿀</p></a><p>꿀향이 강하고 쌉쌀한 맛을 즐긴다면</p></li>
-                                <li><a href="#"><img src="images/상품리스트/잡화꿀2_4kg_2병_62000원.png" alt="잡화꿀2.4kg 2병 62000원"><p>잡화꿀</p></a><p>은은한 맛이 좋다면</p></li>
-                                <li><a href="#"><img src="images/상품리스트/야생꽃꿀2_4kg_52000원.png" alt="야생꽃꿀2.4kg 52000원"><p>화분</p></a><p>풍부한 맛을 원한다면</p></li>
+                                <li>
+                                    <div class="listWish"></div>
+                                    <a href="#">
+                                        <img src="images/productList/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원">
+                                        <p>아카시아꿀</p>
+                                    </a>
+                                        <p>대중적인 맛을 원한다면</p>
+                                    </li>
+                                <li><a href="#"><div class="listWish"></div><img src="images/productList/밤꿀2_4kg_60000원.png" alt="밤꿀2.4kg 60000원"><p>밤꿀</p></a><p>진한 향을 즐기고 싶다면</p></li>
+                                <li><a href="#"><div class="listWish"></div><img src="images/productList/토종꿀2_4kg_58,000원.png" alt="토종꿀2.4kg 58000원"><p>토종꿀</p></a><p>꿀향이 강하고 쌉쌀한 맛을 즐긴다면</p></li>
+                                <li><a href="#"><div class="listWish"></div><img src="images/productList/잡화꿀2_4kg_2병_62000원.png" alt="잡화꿀2.4kg 2병 62000원"><p>잡화꿀</p></a><p>은은한 맛이 좋다면</p></li>
+                                <li><a href="#"><div class="listWish"></div><img src="images/productList/야생꽃꿀2_4kg_52000원.png" alt="야생꽃꿀2.4kg 52000원"><p>화분</p></a><p>풍부한 맛을 원한다면</p></li>
                             </ul>
                         </div>
                     </div>    
@@ -127,39 +157,46 @@
                             <div class="bestdiv_best"><a href="#bestList">베스트</a></div>
                             <div class="bestdiv_steady"><a href="#steadyList">스테디</a></div>
                             <div class="bestdiv_thisweek"><a href="#thisweekList">이번주</a></div>
+                            <div class="divOn"></div>
                     </div>
                     <!--메인이미지 크기 500x500, 썸네일은 150x150-->
                     <section>
                         <h4 class="hidden">베스트 상품</h4>
                         <div id="bestList">
                             <ul>
-                                <li><a href="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png"><img src="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원"></a></li>
-                                <li><a href="images/상품리스트/밤꿀2_4kg_60000원.png"><img src="images/상품리스트/밤꿀2_4kg_60000원.png" alt="밤꿀2.4kg 60000원"></a></li>
-                                <li><a href="images/상품리스트/벌집꿀3_6kg_64500원.png"><img src="images/상품리스트/벌집꿀3_6kg_64500원.png" alt="벌집꿀3.6kg 64500원"></a></li>
+                                <li>
+                                    <div class="bestWish"></div>
+                                    <a href="images/productList/아카시아꿀1_2kg_2병_33000원.png">
+                                        <img src="images/productList/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원">
+                                        <p>아카시아꿀</p><p>33,000원<span>(1.2kg 2병)</span></p>
+                                    </a>
+                                </li>
+                                <li><div class="bestWish"></div><a href="images/productList/밤꿀2_4kg_60000원.png"><img src="images/productList/밤꿀2_4kg_60000원.png" alt="밤꿀2.4kg 60000원"><p>밤꿀</p><p>60,000원<span>(2.4kg)</span></p></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/벌집꿀3_6kg_64500원.png"><img src="images/productList/벌집꿀3_6kg_64500원.png" alt="벌집꿀3.6kg 64500원"><p>벌집꿀</p><p>64,500원<span>(3.6kg)</span></p></a></li>
                             </ul>
-                            <img class="bestProduct" src="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png" alt="">
+                            <img class="bestProduct" src="images/productList/아카시아꿀1_2kg_2병_33000원.png" alt="">
                         </div>
                     </section>
                     <section>
                         <h4 class="hidden">스테디 상품</h4>
                         <div id="steadyList">
                             <ul>
-                                <li><a href="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png"><img src="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원"></a></li>
-                                <li><a href="images/상품리스트/야생꽃꿀2_4kg_52000원.png"><img src="images/상품리스트/야생꽃꿀2_4kg_52000원.png" alt="밤꿀2.4kg 60000원"></a></li>
-                                <li><a href="images/상품리스트/토종꿀2_4kg_58,000원.png"><img src="images/상품리스트/토종꿀2_4kg_58,000원.png" alt="벌집꿀3.6kg 64500원"></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/아카시아꿀1_2kg_2병_33000원.png"><img src="images/productList/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1.2kg 2병 33000원"> <p>아카시아꿀</p><p>33,000원<span>(1.2kg 2병)</span></p></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/야생꽃꿀2_4kg_52000원.png"><img src="images/productList/야생꽃꿀2_4kg_52000원.png" alt="야생꽃꿀2.4kg 52000원"> <p>야생꽃꿀</p><p>52,000원<span>(2.4kg)</span></p></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/토종꿀2_4kg_58,000원.png"><img src="images/productList/토종꿀2_4kg_58,000원.png" alt="토종꿀 2.4kg 58,000원"><p>토종꿀</p><p>58,000원<span>(2.4kg)</span></p></a></li>
                             </ul>
-                            <img class="bestProduct" src="images/상품리스트/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1_2kg_2병_33000원.png">
+                            <img class="bestProduct" src="images/productList/아카시아꿀1_2kg_2병_33000원.png" alt="아카시아꿀1_2kg_2병_33000원.png">
                         </div>
                     </section>
                     <section>
                         <h4 class="hidden">이번주 베스트</h4>
                         <div id="thisweekList">
                             <ul>
-                                <li><a href="images/상품리스트/벌집꿀3_6kg_64500원.png"><img src="images/상품리스트/벌집꿀3_6kg_64500원.png" alt="벌집꿀3_6kg_64500원.png"></a></li>
-                                <li><a href="images/상품리스트/잡화꿀2_4kg_2병_62000원.png"><img src="images/상품리스트/잡화꿀2_4kg_2병_62000원.png" alt="잡화꿀2_4kg_2병_62000원.png"></a></li>
-                                <li><a href="images/상품리스트/꿀벌화분1kg_50000원.png"><img src="images/상품리스트/꿀벌화분1kg_50000원.png" alt="벌집꿀3.6kg 64500원"></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/벌집꿀3_6kg_64500원.png"><img src="images/productList/벌집꿀3_6kg_64500원.png" alt="벌집꿀 3.6kg 64500원.png"><p>벌집꿀</p><p>64,500원<span>(3.6kg)</span></p></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/잡화꿀2_4kg_2병_62000원.png"><img src="images/productList/잡화꿀2_4kg_2병_62000원.png" alt="잡화꿀 2.4kg 2병 62000원.png"><p>잡화꿀</p><p>62,000원<span>(2.4kg 2병)</span></p></a></li>
+                                <li><div class="bestWish"></div><a href="images/productList/꿀벌화분1kg_50000원.png"><img src="images/productList/꿀벌화분1kg_50000원.png" alt="꿀벌화분 1kg 50000원"><p>꿀벌화분</p><p>50,000원<span>(1kg)</span></p></a></li>
                             </ul>
-                            <img class="bestProduct" src="images/상품리스트/벌집꿀3_6kg_64500원.png" alt="벌집꿀3_6kg_64500원.png">
+                            <img class="bestProduct" src="images/productList/벌집꿀3_6kg_64500원.png" alt="벌집꿀3_6kg_64500원.png">
                         </div>
                     </section>
                     
@@ -178,22 +215,25 @@
                 <a href="#">다양한 꿀팁 알아보러 가기 <span class="nextIcon">우방향아이콘</span></a>
             </article>
             <article id="timedeal">
+                <div id="alarm"></div>
                 <h4>TIME DEAL</h4>
-                <p>현재 할인이 00시 00분 00초 남았습니다.</p>
-                <img src="images/상품리스트/아카시아꿀2_4kg_사은품추가_28000원.png" alt="아카시아꿀2_4kg_사은품추가_28000원">
+                <p>현재 할인이</p>
+                <p id="dealCount"></p>
+                <p>남았습니다.</p>
+                <img src="images/productList/아카시아꿀2_4kg_사은품추가_28000원.png" alt="아카시아꿀2_4kg_사은품추가_28000원">
                 <a href="#">할인중인 제품 사러가기 <span class="nextIcon">우방향아이콘</span></a>
             </article>
         </section>
-        <div id="howTo"><p>꿀 어떻게 보관해야 하나요? 자주묻는 질문 GO</p></div>
+        <div id="howTo"><p>꿀 어떻게 보관해야 하나요? 자주묻는 질문 GO !</p><a href="#">바로가기</a></div>
 
         <div id="bottomBg">
         <section id="native">
             <h3 class="hidden">꿀의 효능_토종꿀 소개</h3>
             <div id="farmWrap">
                 <ul>
-                    <li id="farm1"><img src="images/농장이미지/아카시아꿀채취1.png" alt="아카시아 꿀 직접 채취하는 장면"></li>
-                    <li id="farm2"><img src="images/농장이미지/지리산양봉장2.png" alt="산사람농원의 양봉장 전경"></li>
-                    <li id="farm3"><img src="images/농장이미지/밤꿀채취.png" alt="밤꿀채취하는 장면"></li>
+                    <li id="farm1" class="zIndex"><img src="images/farmIMG/honeycollect1.png" alt="아카시아 꿀 직접 채취하는 장면"></li>
+                    <li id="farm2"><img src="images/farmIMG/honeycollect2.png" alt="산사람농원의 양봉장 전경"></li>
+                    <li id="farm3"><img src="images/farmIMG/honeycollect3.png" alt="밤꿀채취하는 장면"></li>
                 </ul>
             </div>
             <div id="farmBtn">
@@ -201,10 +241,11 @@
                 <div id="farmBtn2">2</div>
                 <div id="farmBtn3">3</div>
             </div>
-            
-            <p>특종 지리산 토종꿀은 지리산 청정지역 오염되지 않은 깊은 산속에서<br> 토종꿀벌이 봄부터 늦가을까지 수많은 야생꽃으로부터 꿀을 물어와<br>토종 벌집속에 꿀을 저장,봉개,숙성한 벌집채꿀을<br>정성껏 생청으로 내린 꿀입니다.<br><br>특품 토종꿀은 봄철분봉 이후에 꽃이 많은 계절에 채취한 꿀로<br>일반 토종꿀보다<br>꽃향이 강하다는 특징이 있습니다.</p>
-            <div id="readHoneyComb"></div>
-            <a href="#">Read more</a>
+            <div id="farmTxt">
+                <p>특종 지리산 토종꿀은 지리산 청정지역 오염되지 않은 깊은 산속에서<br> 토종꿀벌이 봄부터 늦가을까지 수많은 야생꽃으로부터 꿀을 물어와<br>토종 벌집속에 꿀을 저장,봉개,숙성한 벌집채꿀을<br>정성껏 생청으로 내린 꿀입니다.<br><br>특품 토종꿀은 봄철분봉 이후에 꽃이 많은 계절에 채취한 꿀로<br>일반 토종꿀보다<br>꽃향이 강하다는 특징이 있습니다.</p>
+                <div id="readHoneyComb"></div>
+                <a href="#">Read more</a>
+            </div>
         </section>
         <section id="need">
             <h3>어떤 꿀이 필요하세요?</h3>
