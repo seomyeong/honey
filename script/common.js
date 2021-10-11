@@ -51,7 +51,7 @@ function sliding(){
     }
     $('.sliderBtn div').removeClass('slideOn')
     $('.sliderBtn div:eq('+num+')').addClass('slideOn')
-    console.log('sliderLeft = '+$('.sliderList').css('left') )
+    // console.log('sliderLeft = '+$('.sliderList').css('left') )
 
 }
 let timer1=setInterval(sliding,3000)
@@ -98,6 +98,11 @@ $('#bestWrap>section>div>ul>li>a').on('click',function(e){
     let honeyimg=$(this).attr('href')
     let alt=$(this).children().attr('alt')
     $('.bestProduct').attr({src:honeyimg, alt:alt})
+
+    let honeyTxt=$(this).children().attr('alt')
+    console.log(honeyTxt)
+    $('.bestProductTxt').replaceWith('<p class="bestProductTxt">'+honeyTxt+'</p>')
+
     e.preventDefault()
 })
 
@@ -106,13 +111,16 @@ $('#bestWrap>section>div>ul>li>a').on('click',function(e){
 $('.bestdiv div').on('click',function(e){
     let href=$(this).children().attr('href')
     let imgPath=$(href).find('li:eq(0)').children('a').attr('href')
+    let txtPath=$(href).find('li:eq(0)').find('img').attr('alt')
+    // console.log(txtPath)
+    
     let num=$(this).index()
-    console.log(imgPath)
     $('.bestProduct').attr({src:imgPath})
-
+    $('.bestProductTxt').replaceWith('<p class="bestProductTxt">'+txtPath+'</p>')
+    
     $(this).parent().siblings('section').hide()
     $(this).parent().siblings('section:eq('+num+')').show()
-
+    
     e.preventDefault()
 })
 

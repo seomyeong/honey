@@ -141,7 +141,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 .slider2 #slider2_img{
     position: absolute; top: 50px; left: calc(50% - -70px);
     width: 500px; height: 450px;
-    background:url(../images/productList/아카시아꿀2_4kg_2병_잡화꿀2_4kg_2병_105,000원.png) no-repeat center / cover;}
+    background:url(../images/productList/acacia_2_4kg_2bottle_various2_4kg_2bottle_105,000.png) no-repeat center / cover;}
 .slider2 #slider2_txt{ 
     position: absolute; top: 190px; left: calc(40% - 200px);
     font-weight: bold; text-align: center;}
@@ -213,6 +213,14 @@ body{font-family: 'KOTRA_GOTHIC';}
 #bestWrap h3{font-size: 30px; position: absolute; top: 0px;}
 #bestWrap p{font-size: 20px; position: absolute; top: 50px;}
 #bestList{position: relative; z-index: 1;}
+.bestProductTxt{
+    /* position: absolute;  */
+    /* top: 0px; right: 0px;  */
+    margin: 460px 0 0 250px; 
+    width: 500px; height: 50px;
+    background: #ffd667;
+    text-align: center;
+}
 
 /*각 section 공통적용 */
 #bestWrap>section{
@@ -223,7 +231,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 #bestWrap>section>div .bestProduct{position: absolute; top: 0px; right: 0px; width: 500px; height: 500px; border: 1px solid #dbdbdb; background: #fff;}
 
 #bestOne a{display: block; color: rgb(77, 77, 77); width: 300px; height: 50px;
-    position: absolute; bottom: 70px; right: 180px;
+    position: absolute; bottom: 20px; right: 180px;
     font-size: 24px; letter-spacing: -2px; text-align: center; line-height: 50px;
     background:  url(../images/icon/next.png) no-repeat center / cover;
     background-size: 20px 20px; background-position: 270px 15px;}
@@ -238,7 +246,10 @@ body{font-family: 'KOTRA_GOTHIC';}
     width: 300px; height: 50px;
     position: absolute; top: 0; z-index: 1;}
 /*bestList>p태그*/
-#bestWrap>section>div ul>li>a>p{color: #000; margin-left: 50px; display: table; } 
+#bestWrap>section>div ul>li>a>p{
+    color: #000; 
+    width: 220px; height: 20px; 
+} 
 #bestWrap>section>div ul>li>a>p:nth-of-type(1){font-size: 24px; font-weight: bold; letter-spacing: -1.5px;}
 #bestWrap>section>div ul>li>a>p>span{font-size: 12px;}
 
@@ -251,7 +262,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 
 /*best listWish, lank*/
 #bestWrap>section>div .bestWish{
-    position: relative; top: 0px; left: 180px; 
+    position: relative; top: 0px; left: 180px; z-index: 1;
     width: 40px; height: 40px; 
     background: url(../images/icon/wish1.png) no-repeat center / cover;}
 #bestWrap>section>div .bestWish:hover{
@@ -328,7 +339,7 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #farmWrap ul li{ position: absolute; top: 30px; width: 800px; }
 #farmWrap ul li img{width: 800px; height: 600px; border-radius: 20px 20px; float: left; }
 
-#farmTxt{width: 450px; position: absolute; top: 200px; right: 0px;}
+#farmTxt{width: 450px; position: absolute; top: 200px; right: 60px;}
 #farmTxt p{ text-align: left; float: right; font-size: 15px;}
 
 #farmTxt a{position:absolute; top: 270px;  right:40px; color: rgb(0, 0, 0); font-size: 20px;
