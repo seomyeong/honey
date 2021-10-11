@@ -63,7 +63,7 @@ body{font-family: 'KOTRA_GOTHIC';}
     margin-top: -15px;}
 
 /*personalZone icon*/
-#personalZone>a{width: 25px; height: 25px; position: absolute; top: 55px; right: 0px; z-index: 1;}
+#personalZone>a{width: 25px; height: 25px; position: absolute; top: 55px; right: 0px; z-index: 1; text-indent: -9999px;}
 #personalZone #search{background: url(../images/icon/search.png) no-repeat center / cover; right: 0px;}
 #personalZone #cart{background: url(../images/icon/shopping-cart2.png) no-repeat center / cover; right: -45px;}
 #personalZone #personal{background: url(../images/icon/personal.png) no-repeat center / cover; right: -80px;}
@@ -219,7 +219,7 @@ body{font-family: 'KOTRA_GOTHIC';}
     position:absolute; top: 0;
     width: 750px; margin-left: 450px; }
 #bestWrap>section>div li{width: 220px; height: 200px; margin-bottom:5px; border: 1px solid #dbdbdb; background: #fff; text-align: center;}
-#bestWrap>section>div li a img{width: 180px; height: 140px; position: relative; top: -40px;}
+#bestWrap>section>div li a img{width: 180px; height: 140px; position: relative; top: -70px;}
 #bestWrap>section>div .bestProduct{position: absolute; top: 0px; right: 0px; width: 500px; height: 500px; border: 1px solid #dbdbdb; background: #fff;}
 
 #bestOne a{display: block; color: rgb(77, 77, 77); width: 300px; height: 50px;
@@ -236,10 +236,9 @@ body{font-family: 'KOTRA_GOTHIC';}
 .bestdiv>div>a{display: block; color: rgb(0, 0, 0); font-size: 20px; text-align: left; 
     font-weight: bold; padding-left: 10px; line-height: 50px;
     width: 300px; height: 50px;
-    position: absolute; top: 0; 
-    z-index: 1;}
+    position: absolute; top: 0; z-index: 1;}
 /*bestList>p태그*/
-#bestWrap>section>div ul>li>a>p{color: #000; margin-left: 50px; } 
+#bestWrap>section>div ul>li>a>p{color: #000; margin-left: 50px; display: table; } 
 #bestWrap>section>div ul>li>a>p:nth-of-type(1){font-size: 24px; font-weight: bold; letter-spacing: -1.5px;}
 #bestWrap>section>div ul>li>a>p>span{font-size: 12px;}
 
@@ -250,13 +249,23 @@ body{font-family: 'KOTRA_GOTHIC';}
 #bestWrap>section>div ul>li:nth-of-type(3)>a>p:nth-of-type(1){margin-top: 510px;}
 #bestWrap>section>div ul>li:nth-of-type(3)>a>p:nth-of-type(2){margin-top: 540px; font-size: 15px;}
 
-/*best listWish*/
+/*best listWish, lank*/
 #bestWrap>section>div .bestWish{
     position: relative; top: 0px; left: 180px; 
     width: 40px; height: 40px; 
     background: url(../images/icon/wish1.png) no-repeat center / cover;}
 #bestWrap>section>div .bestWish:hover{
     background: url(../images/icon/wish1-2.png) no-repeat center / cover;}
+.lank{
+    text-indent: -9999px;
+    background: no-repeat center;
+    background-size: 40px 40px;
+    position: relative; top: 0px; left: 180px; 
+    width: 40px; height: 40px; 
+}
+.lank1{background-image: url(../images/icon/lank_first.png);}
+.lank2{background-image: url(../images/icon/lank_second.png);}
+.lank3{background-image: url(../images/icon/lank_third4.png);}
 
 /*-------------------------추천팁, 할인섹션----------------------------*/
 /*꿀팁*/
@@ -509,13 +518,13 @@ background-size: 100px 100px; background-position: 65px 18px;}
 #quick{display: block; width: 60px; height: 60px; font-family: 'Pretendard-Regular';
     position: fixed; bottom: 50px; right: 100px;
     background: #ffffff; border-radius: 2px; text-align: center; line-height: 95px;
-    color: rgb(122, 117, 117); font-weight: normal; font-size: 18px; transition: 0.3s;
+    color: #74573c; font-weight: normal; font-size: 18px; transition: 0.3s;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
 }
 #quick div span{
     position: absolute; top: 0; left: 10px;
     width: 42px; height: 2px; 
-    background: #ffbb00;
+    background: #74573c;
     margin-top: 8px;}
 #quick div span:nth-of-type(2){top:10px;}
 #quick div span:nth-of-type(3){top:20px;}

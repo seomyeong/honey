@@ -14,37 +14,51 @@ $('#gnbTitle>li').on('mouseleave',function(){
 })
 
 /* nav - 스크롤 내리면 shadow효과 적용 */
+// $(window).on('scroll',function(){
+//     if( $(window).scrollTop() >= 50 ){
+//         $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
+//     }else{
+//         $('#navFix').css({boxShadow:'0 0 0px'})
+//     }
+// })
+let navcolor=0
 $(window).on('scroll',function(){
-    if( $(window).scrollTop() >= 50 ){
-        $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
-    }else{
-        $('#navFix').css({boxShadow:'0 0 0px'})
+    if( $(window).scrollTop() >= 50 && navcolor==0 ){
+        navcolor=1
+        $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'}).animate({backgroundColor:"#fff"})
+    }else if( $(window).scrollTop() < 50 && navcolor==1){
+        $('#navFix').css({boxShadow:'0 0 0px'}).animate({backgroundColor:"#f8f8f2"})
+        navcolor=0
     }
 })
 
+
+
+
 /* 메인배너 슬라이드 */
 var num=0; //변수 num은 slideOn클래스 이동을 위한 변수
-let liWidth=$('.sliderList').width()
-let sliderLeft= $('.sliderList').css('left')
+let Rwin=$(window).width()
+console.log(Rwin)
 
 function sliding(){
     num++
-    if( $('.sliderList').css('left') == "-200%"){
+    //-4200보다 작고 -2100보다 크면
+    if( $('.sliderList').css('left') <= "-4200px" && $('.sliderList').css('left') > "-2000px" ){
         num=0
-        $('.sliderList').animate({left:0})
+        $('.sliderList').animate({left:"0%"})
     }else{
         $('.sliderList').animate({left:"-=100%"})
     }
     $('.sliderBtn div').removeClass('slideOn')
     $('.sliderBtn div:eq('+num+')').addClass('slideOn')
-    console.log('sliderLeft = '+$('.sliderList').css('left'))
+    console.log('sliderLeft = '+$('.sliderList').css('left') )
 
 }
-// let timer1=setInterval(sliding,2000)
+let timer1=setInterval(sliding,3000)
 
 $('.sliderBtn div').on('click',function(e){
-    // clearInterval(timer1)
-    // timer1=setInterval(sliding,2000)
+    clearInterval(timer1)
+    timer1=setInterval(sliding,3000)
 
     let pos=$(this).index()*(-100)+'%'
     $('.sliderList:not(:animated)').stop().animate({left:pos})
@@ -139,7 +153,7 @@ function CountDownTimer(dt, id) {
     }
     timer = setInterval(showRemaining, 1000)
 }
-CountDownTimer('10/13/2021 23:59:59', 'dealCount') // 2021-10-13까지
+CountDownTimer('10/16/2021 23:59:59', 'dealCount') // 2021-10-16까지
 
 function alarm(){
     $('#alarm').animate({top:"0"}).animate({left:"70px"},100).animate({left:"90px"},100).animate({left:"70px"},100).animate({left:"90px"},100).animate({top:"20px"})
@@ -148,18 +162,21 @@ setInterval(alarm,1000)
 
 /* farmWrap 슬라이드 */
 // $('#farmBtn div').on('click',function(){
-//     let pos=$(this).index()*(-800)
-//     $('#farmWrap').stop().animate({marginLeft:pos})
+//     let num=$(this).index()
+//     console.log( num )
+//     $('#farmWrap li').removeClass('zIndex')
+//     $('#farmWrap li:eq('+num+')').addClass('zIndex')
 
 //     $('#farmBtn div').removeClass('farmBtnOn')
 //     $(this).addClass('farmBtnOn')
 // })
 
+$('#farm2, #farm3').hide()
 $('#farmBtn div').on('click',function(){
     let num=$(this).index()
     console.log( num )
-    $('#farmWrap li').removeClass('zIndex')
-    $('#farmWrap li:eq('+num+')').addClass('zIndex')
+    $('#farmWrap li').fadeOut(1000).removeClass('zIndex')
+    $('#farmWrap li:eq('+num+')').addClass('zIndex').fadeIn(1000)
 
     $('#farmBtn div').removeClass('farmBtnOn')
     $(this).addClass('farmBtnOn')
@@ -182,23 +199,29 @@ $(window).on('scroll',function(){
 })
 /* 퀵버튼 hover 시 span 넓이 애니메이션 */
 $('#quick').hover(function(){
-    $('#quick div span:eq(1)').animate({width:'25'+'%', left:'20px'})
+    $('#quick div span:eq(1)').animate({width:'25'+'%', left:'22px'})
 }, function(){
     $('#quick div span:eq(1)').animate({width:'42px', left:'10px'})
 })
 
-/*퀵버튼 토글 */
-$('.quickMenu').css({right:'-300px'})
-$('#quick, .exit p').toggle(function(e){
+/*퀵버튼 slide */
+$('.quickMenu').css({right:'-310px'})
+$('#quick').on('click',function(e){
     $('.quickMenu').animate({right:'0px'})
     e.preventDefault()
-},function(e){
-    $('.quickMenu').animate({right:'-300px'})
+})
+$('.exit p').on('click',function(e){
+    $('.quickMenu').animate({right:'-310px'})
     e.preventDefault()
 })
+
+
+
+
+
 /* exitX 돌아가게 만들기  */
-$('.exitX').hover(function(){
-    $(this).stop().css({animationName:'exitXrotate', animationDuration: "0.3s"})
+$('.exit p').hover(function(){
+    $('.exitX').stop().css({animationName:'exitXrotate', animationDuration: "0.3s"})
 },function(){
-    $(this).stop().css({animationName:'exitXrotate2', animationDuration: "0.3s"})
+    $('.exitX').stop().css({animationName:'exitXrotate2', animationDuration: "0.3s"})
 })
