@@ -15,7 +15,6 @@ $('#gnbTitle>li').on('mouseleave',function(){
 
 /* nav - 스크롤 내리면 shadow효과 적용 */
 $(window).on('scroll',function(){
-    console.log( $(window).scrollTop() )
     if( $(window).scrollTop() >= 50 ){
         $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
     }else{
@@ -65,7 +64,6 @@ $('.sliderBtn div').on('click',function(e){
 
 /* taste 슬라이드 */
 let imgwidth=$('#list ul img').width()
-// console.log(imgwidth)
 $('#tasteLeft').on('click',function(){ //마지막이미지가 첫번째로 prepend, ul의 marginLeft
     $('#list ul').prepend( $('#list ul li:last') ).css({marginLeft:-imgwidth}).animate({marginLeft:0})
 })
@@ -79,7 +77,6 @@ $('#tasteRight').on('click',function(){ //첫번째이미지가 맨뒤로 append
 
 
 /* ------------------best-------------------- */
-// $('#steadyList,#thisweekList').hide()
 
 
 /* $('#bestWrap>section>div>ul>li>a') 클릭시 bestProduct에 이미지 뜨게하는 클릭이벤트 */
@@ -87,7 +84,6 @@ $('#bestWrap>section>div>ul>li>a').on('click',function(e){
     let honeyimg=$(this).attr('href')
     let alt=$(this).children().attr('alt')
     $('.bestProduct').attr({src:honeyimg, alt:alt})
-    // console.log( $(this) ).attr('alt') 
     e.preventDefault()
 })
 
@@ -118,7 +114,7 @@ $('.bestdiv div').on('click',function(){
 
 /* timeDeal */
 function CountDownTimer(dt, id) {
-    var end = new Date(dt)
+    var end = new Date(dt) 
     var _second = 1000;
     var _minute = _second * 60
     var _hour = _minute * 60
@@ -129,7 +125,7 @@ function CountDownTimer(dt, id) {
         var distance = end - now
         if (distance < 0) { //timeOut시
             clearInterval(timer)
-            document.getElementById(id).innerHTML = '타임딜 종료됨'
+            document.getElementById(id).innerHTML = '타임딜 종료'
             return
         }
         var days = Math.floor(distance / _day)
@@ -174,21 +170,26 @@ $('#farmBtn div').on('click',function(){
 
 /*-----------------------------------퀵버튼------------------------------------- */
 /*윈도우 스크롤이 #taste에 오면 나타나게하고, 그 이전이면 숨기기 */
-$('#top').css({display:'none'})
+$('#quick').css({display:'none'})
 
 $(window).on('scroll',function(){
     if( $(window).scrollTop() >= $('main').position().top-500 ){
-        $('#top').show()
+        $('#quick').show()
     }
     else{
-        $('#top').hide()
+        $('#quick').hide()
     }
 })
-
+/* 퀵버튼 hover 시 span 넓이 애니메이션 */
+$('#quick').hover(function(){
+    $('#quick div span:eq(1)').animate({width:'25'+'%', left:'20px'})
+}, function(){
+    $('#quick div span:eq(1)').animate({width:'42px', left:'10px'})
+})
 
 /*퀵버튼 토글 */
 $('.quickMenu').css({right:'-300px'})
-$('#top, .exit p').toggle(function(e){
+$('#quick, .exit p').toggle(function(e){
     $('.quickMenu').animate({right:'0px'})
     e.preventDefault()
 },function(e){
