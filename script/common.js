@@ -1,6 +1,12 @@
 $('a').on('click',function(e){
     e.preventDefault()
 })
+/* 마우스커서 */
+$(window).on('mousemove',function(e){
+    $('.mouseB').css({
+        top:e.pageY+10, left:e.pageX+10})
+})
+
 
 /*--------------------슬라이드----------------------- */
 $('.snb').hide()
@@ -14,24 +20,16 @@ $('#gnbTitle>li').on('mouseleave',function(){
 })
 
 /* nav - 스크롤 내리면 shadow효과 적용 */
-// $(window).on('scroll',function(){
-//     if( $(window).scrollTop() >= 50 ){
-//         $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
-//     }else{
-//         $('#navFix').css({boxShadow:'0 0 0px'})
-//     }
-// })
 let navcolor=0
 $(window).on('scroll',function(){
     if( $(window).scrollTop() >= 50 && navcolor==0 ){
         navcolor=1
-        $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'}).animate({backgroundColor:"#fff"})
+        $('#navFix').css({boxShadow:'0 0 10px rgba(0, 0, 0, 0.3)'})
     }else if( $(window).scrollTop() < 50 && navcolor==1){
-        $('#navFix').css({boxShadow:'0 0 0px'}).animate({backgroundColor:"#f8f8f2"})
+        $('#navFix').css({boxShadow:'0 0 0px'})
         navcolor=0
     }
 })
-
 
 
 
@@ -47,26 +45,14 @@ function sliding(){
     num++
     if( liCount==liLength ){
         num=0
-        $('.sliderList').animate({left:"0%"})
+        $('.sliderList:not(:animated)').stop().animate({left:"0%"})
     }else{
-        $('.sliderList').animate({left:"-=100%"})
+        $('.sliderList:not(:animated)').stop().animate({left:"-=100%"})
     }
     if( liCount==3 ) liCount=0
 
     $('.sliderBtn div').removeClass('slideOn')
     $('.sliderBtn div:eq('+num+')').addClass('slideOn')
-
-
-    // num++
-    // //-4200보다 작고 -2100보다 크면
-    // if( $('.sliderList').css('left') <= "-4200px" && $('.sliderList').css('left') > "-2000px" ){
-    //     num=0
-    //     $('.sliderList').animate({left:"0%"})
-    // }else{
-    //     $('.sliderList').animate({left:"-=100%"})
-    // }
-    // $('.sliderBtn div').removeClass('slideOn')
-    // $('.sliderBtn div:eq('+num+')').addClass('slideOn')
 
 }
 let timer1=setInterval(sliding,3000)
@@ -75,21 +61,16 @@ $('.sliderBtn div').on('click',function(e){
     clearInterval(timer1)
     timer1=setInterval(sliding,3000)
 
+    liCount = $(this).index()
     let pos=$(this).index()*(-100)+'%'
     $('.sliderList:not(:animated)').stop().animate({left:pos})
-    
+
 
     $('.sliderBtn div').removeClass('slideOn')
     $(this).addClass('slideOn')
 
     e.preventDefault()
 })
-
-
-
-
-
-
 
 
 /* taste 슬라이드 */
@@ -99,16 +80,12 @@ $('#tasteLeft').on('click',function(){ //마지막이미지가 첫번째로 prep
 })
 $('#tasteRight').on('click',function(){ //첫번째이미지가 맨뒤로 append. ul의 marginLeft이동
     $('#list ul:not(:animated)').animate({marginLeft:-imgwidth}, 500, function(){
-        $('#list ul').append( $('#list ul li:first') ).css({marginLeft:'20px'})
+        $('#list ul').append( $('#list ul li:first') ).css({marginLeft:'0px'})
     })
 })
 
 
-
-
 /* ------------------best-------------------- */
-
-
 /* $('#bestWrap>section>div>ul>li>a') 클릭시 bestProduct에 이미지 뜨게하는 클릭이벤트 */
 $('#bestWrap>section>div>ul>li>a').on('click',function(e){
     let honeyimg=$(this).attr('href')
@@ -128,15 +105,14 @@ $('.bestdiv div').on('click',function(e){
     let href=$(this).children().attr('href')
     let imgPath=$(href).find('li:eq(0)').children('a').attr('href')
     let txtPath=$(href).find('li:eq(0)').find('img').attr('alt')
-    // console.log(txtPath)
-    
+
     let num=$(this).index()
     $('.bestProduct').attr({src:imgPath})
     $('.bestProductTxt').replaceWith('<p class="bestProductTxt">'+txtPath+'</p>')
-    
+
     $(this).parent().siblings('section').hide()
     $(this).parent().siblings('section:eq('+num+')').show()
-    
+
     e.preventDefault()
 })
 
@@ -160,10 +136,9 @@ $('#honeyTip div:eq(1)').hover(function(){
     $(this).css({backgroundSize:'170px 170px',transition:'1s'})
 })
 
-
 /* timeDeal */
 function CountDownTimer(dt, id) {
-    var end = new Date(dt) 
+    var end = new Date(dt)
     var _second = 1000;
     var _minute = _second * 60
     var _hour = _minute * 60
@@ -191,11 +166,16 @@ function CountDownTimer(dt, id) {
 CountDownTimer('10/16/2021 23:59:59', 'dealCount') // 2021-10-16까지
 
 function alarm(){
-    $('#alarm').animate({top:"0"}).animate({left:"70px"},100).animate({left:"90px"},100).animate({left:"70px"},100).animate({left:"90px"},100).animate({top:"20px"})
+    $('#alarm').animate({top:"50px"})
+    .animate({left:"70px"},100)
+    .animate({left:"90px"},100)
+    .animate({left:"70px"},100)
+    .animate({left:"90px"},100)
+    .animate({top:"70px"})
 }
 setInterval(alarm,1000)
 
-/* farmWrap 슬라이드 */
+/*-------------- farmWrap 슬라이드 -----------------------*/
 $('#farm2, #farm3').hide()
 
 let farmState=1 //eq:0,1,2 or farm1,2,3
@@ -215,8 +195,6 @@ function farmSlide(){
 let farmTimer=setInterval(farmSlide,2000)
 
 
-
-
 $('#farmBtn div').on('click',function(){
     clearInterval(farmTimer)
     farmTimer=setInterval(farmSlide,2000)
@@ -230,8 +208,6 @@ $('#farmBtn div').on('click',function(){
 })
 
 
-
-
 $('#farmTxt').css({opacity:0})
 $(window).on('scroll',function(){
     if( $(window).scrollTop() >= $('#native').position().top-500 ){
@@ -239,6 +215,54 @@ $(window).on('scroll',function(){
     }
 })
 
+/* honeyWork */
+let km=1; let kmP=document.querySelector('#honey_km p:nth-of-type(1)');
+let mg=1; let mgP=document.querySelector('#honey_mg p:nth-of-type(1)');
+let enter=0; let enterP=document.querySelector('#honey_enter p:nth-of-type(1)');
+let beecount=1; let beecountP=document.querySelector('#honey_beecount p:nth-of-type(1)');
+let state=1
+let workpos=$('#honeyWork').position().top
+// console.log(kmP, workpos)
+
+window.addEventListener('scroll',function(){
+    if(window.scrollY >= workpos-400 && state==1){
+        state=0
+        honeyKm()
+        honeyMg()
+        honeyEnt()
+        honeyBcount()
+    }
+})
+
+function honeyKm(){
+    kmP.innerText= ++km
+    if(km==40)return false
+    setTimeout(function(){
+        honeyKm()
+    },30)
+}
+function honeyMg(){
+    mgP.innerText= ++mg
+    if(mg==30)return false
+    setTimeout(function(){
+        honeyMg()
+    },30)
+}
+function honeyEnt(){
+    enter+=50
+    enterP.innerText= enter
+    if(enter==40000)return false
+    setTimeout(function(){
+        honeyEnt()
+    },1)
+}
+function honeyBcount(){
+    beecountP.innerText= ++beecount
+    if(beecount==600)return false
+    setTimeout(function(){
+        honeyBcount()
+    },2)
+}
 
 
 /*-----------------------------------퀵버튼------------------------------------- */
@@ -270,9 +294,6 @@ $('.exit p').on('click',function(e){
     $('.quickMenu').animate({right:'-310px'})
     e.preventDefault()
 })
-
-
-
 
 
 /* exitX 돌아가게 만들기  */
