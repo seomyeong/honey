@@ -38,20 +38,35 @@ $(window).on('scroll',function(){
 /* 메인배너 슬라이드 */
 var num=0; //변수 num은 slideOn클래스 이동을 위한 변수
 let Rwin=$(window).width()
-console.log(Rwin)
+let liCount=0; //메인슬라이더용 변수1
+let liLength=$('.sliderList li').length; //메인슬라이더용 변수2
+// console.log(liLength)
 
 function sliding(){
+    liCount++
     num++
-    //-4200보다 작고 -2100보다 크면
-    if( $('.sliderList').css('left') <= "-4200px" && $('.sliderList').css('left') > "-2000px" ){
+    if( liCount==liLength ){
         num=0
         $('.sliderList').animate({left:"0%"})
     }else{
         $('.sliderList').animate({left:"-=100%"})
     }
+    if( liCount==3 ) liCount=0
+
     $('.sliderBtn div').removeClass('slideOn')
     $('.sliderBtn div:eq('+num+')').addClass('slideOn')
-    // console.log('sliderLeft = '+$('.sliderList').css('left') )
+
+
+    // num++
+    // //-4200보다 작고 -2100보다 크면
+    // if( $('.sliderList').css('left') <= "-4200px" && $('.sliderList').css('left') > "-2000px" ){
+    //     num=0
+    //     $('.sliderList').animate({left:"0%"})
+    // }else{
+    //     $('.sliderList').animate({left:"-=100%"})
+    // }
+    // $('.sliderBtn div').removeClass('slideOn')
+    // $('.sliderBtn div:eq('+num+')').addClass('slideOn')
 
 }
 let timer1=setInterval(sliding,3000)
@@ -62,6 +77,7 @@ $('.sliderBtn div').on('click',function(e){
 
     let pos=$(this).index()*(-100)+'%'
     $('.sliderList:not(:animated)').stop().animate({left:pos})
+    
 
     $('.sliderBtn div').removeClass('slideOn')
     $(this).addClass('slideOn')
@@ -132,6 +148,17 @@ $('.bestdiv div').on('click',function(){
     $('.bestdiv div').children('a').css({color:'#000'})
     $(this).children('a').css({color:'#fff'})
 })
+/* 꿀팁 */
+$('#honeyTip div:eq(0)').hover(function(){
+    $(this).css({backgroundSize:'500px 500px',transition:'1s'})
+},function(){
+    $(this).css({backgroundSize:'450px 450px',transition:'1s'})
+})
+$('#honeyTip div:eq(1)').hover(function(){
+    $(this).css({backgroundSize:'210px 210px',transition:'1s'})
+},function(){
+    $(this).css({backgroundSize:'170px 170px',transition:'1s'})
+})
 
 
 /* timeDeal */
@@ -169,20 +196,32 @@ function alarm(){
 setInterval(alarm,1000)
 
 /* farmWrap 슬라이드 */
-// $('#farmBtn div').on('click',function(){
-//     let num=$(this).index()
-//     console.log( num )
-//     $('#farmWrap li').removeClass('zIndex')
-//     $('#farmWrap li:eq('+num+')').addClass('zIndex')
-
-//     $('#farmBtn div').removeClass('farmBtnOn')
-//     $(this).addClass('farmBtnOn')
-// })
-
 $('#farm2, #farm3').hide()
+
+let farmState=1 //eq:0,1,2 or farm1,2,3
+let farmBtnState=0
+
+function farmSlide(){
+    farmState++
+    farmBtnState++
+    $('#farmWrap li').fadeOut(2000).removeClass('zIndex')
+    $('#farm'+farmState+'').addClass('zIndex').fadeIn(2000)
+    if(farmState==3){farmState=0;}
+    if(farmBtnState==3){farmBtnState=0}
+
+    $('#farmBtn div').removeClass('farmBtnOn')
+    $('#farmBtn div:eq('+farmBtnState+')').addClass('farmBtnOn')
+}
+let farmTimer=setInterval(farmSlide,2000)
+
+
+
+
 $('#farmBtn div').on('click',function(){
+    clearInterval(farmTimer)
+    farmTimer=setInterval(farmSlide,2000)
+
     let num=$(this).index()
-    console.log( num )
     $('#farmWrap li').fadeOut(1000).removeClass('zIndex')
     $('#farmWrap li:eq('+num+')').addClass('zIndex').fadeIn(1000)
 
@@ -190,6 +229,15 @@ $('#farmBtn div').on('click',function(){
     $(this).addClass('farmBtnOn')
 })
 
+
+
+
+$('#farmTxt').css({opacity:0})
+$(window).on('scroll',function(){
+    if( $(window).scrollTop() >= $('#native').position().top-500 ){
+        $('#farmTxt').animate({opacity:1},2000)
+    }
+})
 
 
 
