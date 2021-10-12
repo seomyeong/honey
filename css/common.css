@@ -3,7 +3,7 @@
 /*초기화*/
 body,h1,h2,h3,h4,h5,h6,ul,p,img,input{margin: 0; padding: 0;}
 li{list-style: none;}
-a{text-decoration: none;}
+a{text-decoration: none;  color: #000;}
 .hidden{position: absolute; left: -9999px;}
 body{font-family: 'KOTRA_GOTHIC';}
 
@@ -12,12 +12,6 @@ body{font-family: 'KOTRA_GOTHIC';}
     font-family: 'KOTRA_GOTHIC';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/KOTRA_GOTHIC.woff') format('woff');
     font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
     font-style: normal;
 }
 @font-face {
@@ -31,6 +25,34 @@ body{font-family: 'KOTRA_GOTHIC';}
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LAB디지털';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/LAB디지털.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*farmTxt*/
+/* @font-face {
+    font-family: 'WandohopeB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+@font-face {
+    font-family: 'BinggraeSamanco-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/BinggraeSamanco-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*timeDeal*/
+@font-face { 
+    font-family: 'SDSamliphopangche_Outline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 /*배경컬러*/
 /*섹션 공통넓이:1280px, height값은 조절*/
 #headerBg{position: relative; width: 100%; height: 800px; background: #f8f8f2;}
@@ -44,11 +66,11 @@ body{font-family: 'KOTRA_GOTHIC';}
         width: 100%; height: 115px; background: #f8f8f2;}
 #header{position: relative; width: 1280px; margin:0 auto;}
 #header h1{
-    position: absolute; top: 15px; left: -50px;
+    position: absolute; top: 33px; left: -130px; height: 70px;
     font-family: 'RIDIBatang';
-    padding: 0 0 0 60px; font-size: 30px; color: #45682e;
+    padding: 10px 0 0 60px; font-size: 25px; color: #45682e;
     background: url(../images/icon/bee1.png) no-repeat center / cover; 
-    background-size: 70px; background-position-x: 0px;}
+    background-size: 55px; background-position: 15px 0px;}
 /*고객메뉴*/
 #customerNav{position:absolute; top: 0; right: -10px;}
 #customerNav li{float: left; font-size: 11px; margin: 10px 3px 0 0;}
@@ -120,7 +142,10 @@ body{font-family: 'KOTRA_GOTHIC';}
 .sliderList{ width: 300%; position:absolute; top: 120px; left: 0; }
 .sliderList li{position: relative; width: 33.3333%; height: 550px; float: left;} /* position: relative->p태그 고정을 위해*/
 
-.slider1{background: linear-gradient(180deg, #fff6a9 50%,#fffde9 50%);} 
+.slider1{
+    /* background: linear-gradient(180deg, #fff6a9 50%,#fffde9 50%); */
+    background:#fffde9;
+} 
 #slider1_img{
     position: absolute; top:30px; left: calc(50% - 10px);
     width: 800px; height: 500px; 
@@ -137,7 +162,10 @@ body{font-family: 'KOTRA_GOTHIC';}
     color: #45682e; font-weight: bold; text-align: center; line-height: 30px; margin-top: 20px;}
 
 
-.slider2{position:relative; background: linear-gradient(180deg, #fff7e6 70%,#eed1a6 30%);}
+.slider2{position:relative; 
+    /* background: linear-gradient(180deg, #fff7e6 70%,#eed1a6 30%); */
+    background:#fff7e6;
+}
 .slider2 #slider2_img{
     position: absolute; top: 50px; left: calc(50% - -70px);
     width: 500px; height: 450px;
@@ -152,7 +180,10 @@ body{font-family: 'KOTRA_GOTHIC';}
     color: #684d2e; font-weight: bold; text-align: center; line-height: 30px; margin-top: 20px;}
 
 
-.slider3{background: linear-gradient(180deg, #faf9ed 70%,#ffd667 30%);}
+.slider3{
+    /* background: linear-gradient(180deg, #faf9ed 70%,#ffd667 30%); */
+    background: #faf9ed;
+}
 #slider3_img{
     position: absolute; top: 0px; right: calc(50% - 900px);
     width: 1280px; height: 650px;
@@ -170,7 +201,7 @@ body{font-family: 'KOTRA_GOTHIC';}
 .sliderBtn>div{
    float: left; margin-right: 25px;
     width: 80px; height: 20px; border-radius: 10px; background: #ece0c5;}
-.sliderBtn div.slideOn{ background: #91ad7f; }
+.sliderBtn div.slideOn{ background: #5cbe1f; }
 
 
 /*----메인시작---*/
@@ -210,17 +241,13 @@ body{font-family: 'KOTRA_GOTHIC';}
 
 /*-----------------------------------best-----------------------------------*/
 #best{position:relative; width: 1280px; margin: 0 auto; height: 650px;}
-#bestWrap h3{font-size: 30px; position: absolute; top: 0px;}
+#bestWrap h3{font-size: 30px; position: absolute; top: 0px; left: 50px;
+    width: 300px;
+background: url(../images/icon/lank_first.png) no-repeat center / cover; 
+background-size: 40px 40px; background-position-y: -2px;
+}
 #bestWrap p{font-size: 20px; position: absolute; top: 50px;}
 #bestList{position: relative; z-index: 1;}
-.bestProductTxt{
-    /* position: absolute;  */
-    /* top: 0px; right: 0px;  */
-    margin: 460px 0 0 250px; 
-    width: 500px; height: 50px;
-    background: #ffd667;
-    text-align: center;
-}
 
 /*각 section 공통적용 */
 #bestWrap>section{
@@ -228,20 +255,34 @@ body{font-family: 'KOTRA_GOTHIC';}
     width: 750px; margin-left: 450px; }
 #bestWrap>section>div li{width: 220px; height: 200px; margin-bottom:5px; border: 1px solid #dbdbdb; background: #fff; text-align: center;}
 #bestWrap>section>div li a img{width: 180px; height: 140px; position: relative; top: -70px;}
-#bestWrap>section>div .bestProduct{position: absolute; top: 0px; right: 0px; width: 500px; height: 500px; border: 1px solid #dbdbdb; background: #fff;}
+#bestWrap>section>div .bestProduct{position: absolute; top: 0px; right: 0px; width: 500px; height: 500px;
+        padding-bottom: 113px;
+        border: 1px solid #dbdbdb; background: #fff;}
+/* #bestTxt{
+    width: 350px; height: 610px; background: #fff;
+} */
+.bestProductTxt{
+            margin: 490px 0 0 272px; 
+            width: 450px; height: 50px; color:#fff; text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+            background: #ffd667; font-weight: bold; box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
+            text-align: center; line-height: 50px;
+            border-radius: 5px; border: 1px solid #dbdbdb;
+        }
 
 #bestOne a{display: block; color: rgb(77, 77, 77); width: 300px; height: 50px;
-    position: absolute; bottom: 20px; right: 180px;
+    position: absolute; top: 290px; left: -65px;
     font-size: 24px; letter-spacing: -2px; text-align: center; line-height: 50px;
     background:  url(../images/icon/next.png) no-repeat center / cover;
     background-size: 20px 20px; background-position: 270px 15px;}
 
 .bestdiv{position: absolute; top: 80px; left: -10px;}
 .bestdiv>div{position:relative; width: 300px; height: 50px;  margin: 10px; }
-.bestdiv>div.divOn{display: block;width: 300px; height: 50px;
-    position: absolute; top: 0; left: 0;
-    background: #ffbb00; color: #fff; border-radius: 3px;}
-.bestdiv>div>a{display: block; color: rgb(0, 0, 0); font-size: 20px; text-align: left; 
+.bestdiv>div.divOn{display: block; width: 300px; height: 50px;
+    position: absolute; top: 0; left: 0; box-shadow: 3px 3px 9px rgba(0,0,0,0.2);
+    background: #ffbb00; border-radius: 3px;}
+.txtfff{ color: #fff; }
+
+.bestdiv>div>a{display: block; font-size: 20px; text-align: left; 
     font-weight: bold; padding-left: 10px; line-height: 50px;
     width: 300px; height: 50px;
     position: absolute; top: 0; z-index: 1;}
@@ -283,11 +324,18 @@ body{font-family: 'KOTRA_GOTHIC';}
 #tip_sale{position:relative; width: 1280px; height: 600px; margin: 0 auto;}
 #tip_sale article{float: left; margin-left: 100px;}
 #tip_sale h4{font-size: 40px; text-align: center; padding: 20px;}
-#honeyTip{width: 500px; height: 500px;}
+#honeyTip{width: 500px; height: 500px; }
+#honeyTip div{text-indent: -9999px; }
+#honeyTip a{position: absolute; top: 490px; left: 200px;}
 #honeyTip div:nth-of-type(1){width: 400px; height: 400px; background: url(../images/editPhoto/요리4.jpg) no-repeat center / cover;
-border-radius: 50%;}
+background-size: 450px 450px; border-radius: 50%; position: absolute; bottom: 130px; left: -10px;}
 #honeyTip div:nth-of-type(2){width: 170px; height: 170px; background:url(../images/editPhoto/요리2.jpg) no-repeat center / cover;
-border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
+background-size: 170px 170px; border-radius: 50%; position: absolute; bottom: 70px; left: 400px;}
+
+/* #honeyTip div:nth-of-type(1):hover{background-size: 550px 550px; transition: 1s;} */
+
+
+
 #honeyTip a{display: block; color: #000; text-align: center; font-size: 20px; margin-top: 40px;}
 #honeyTip a>span{display:inline-block;
     width: 25px; height: 25px; background:url(../images/icon/nextcircle.png) no-repeat center / cover;
@@ -295,6 +343,7 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 
 #timedeal{position: relative;
     width: 500px; height: 500px; margin-left: 120px; text-align: center;}
+#timedeal h4{font-family: 'SDSamliphopangche_Outline'; color: #f00;}
 #timedeal #alarm{
     width: 50px; height: 50px;
     position: absolute; top: 20px; left: 90px;
@@ -306,6 +355,7 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #timedeal a>span{display:inline-block; text-indent: -9999px;
     width: 25px; height: 25px; background:url(../images/icon/nextcircle.png) no-repeat center / cover; }
 #timedeal #dealCount{font-weight: bold; font-size: 25px;}
+#dealCount{font-family: 'LAB디지털';}
 
 #howTo{
     position: relative;
@@ -339,16 +389,15 @@ border-radius: 50%; position: absolute; bottom: 100px; left: 400px;}
 #farmWrap ul li{ position: absolute; top: 30px; width: 800px; }
 #farmWrap ul li img{width: 800px; height: 600px; border-radius: 20px 20px; float: left; }
 
-#farmTxt{width: 450px; position: absolute; top: 200px; right: 60px;}
-#farmTxt p{ text-align: left; float: right; font-size: 15px;}
+#farmTxt{width: 450px; position: absolute; top: 160px; right: 10px; font-family: 'BinggraeSamanco-Bold';}
+#farmTxt p{ text-align: left; float: right; line-height:35px; font-size: 23px; letter-spacing: 1px; }
 
-#farmTxt a{position:absolute; top: 270px;  right:40px; color: rgb(0, 0, 0); font-size: 20px;
-    display: block;  font-weight: bold;
-    width: 100px; height: 30px; }
+#farmTxt a{position:absolute; top: 345px; right:2px; color: rgb(0, 0, 0); font-size: 40px;
+    display: block;  line-height: 20px; width: 100px; height: 30px; }
 #farmTxt #readHoneyComb{
     width: 100px; height: 100px;
     background:url(../images/icon/honeycomb2.png) no-repeat center / cover;
-    position: absolute; top: 225px; right: -20px;
+    position: absolute; top: 300px; right: -20px;
     background-size: 50px 50px;}
 #farmBtn>div{
     position: absolute; top: 650px; cursor: pointer; text-indent: -9999px;
@@ -526,7 +575,7 @@ background-size: 100px 100px; background-position: 65px 18px;}
 
 
 /*퀵버튼*/
-#quick{display: block; width: 60px; height: 60px; font-family: 'Pretendard-Regular';
+#quick{display: block; width: 60px; height: 60px;
     position: fixed; bottom: 50px; right: 100px;
     background: #ffffff; border-radius: 2px; text-align: center; line-height: 95px;
     color: #74573c; font-weight: normal; font-size: 18px; transition: 0.3s;
