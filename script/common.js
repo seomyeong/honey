@@ -2,32 +2,34 @@ $('a').on('click',function(e){
     e.preventDefault()
 })
 /* 마우스커서 */
-$(window).on('mousemove',function(e){
-    $('.mouseB').css({
-        top:e.pageY+5, left:e.pageX+5})
-    // console.log( $('.mouseB').position().left )
+// $(window).on('mousemove',function(e){
+//     $('.mouseB').css({
+//         top:e.pageY+5, left:e.pageX+5})
+//     // console.log( $('.mouseB').position().left )
 
-    if( $('.mouseB').position().left > $(window).width() ){
-        $('.mouseB').hide()
-    }else if( $('.mouseB').position().left < $(window).width() ){
-        $('.mouseB').show()
-    }
-})
+//     if( $('.mouseB').position().left > $(window).width() ){
+//         $('.mouseB').hide()
+//     }else if( $('.mouseB').position().left < $(window).width() ){
+//         $('.mouseB').show()
+//     }
+// })
 
 // .mouseB의 left값이 window값보다 많은 조건식에 걸릴경우 left값으로 0도 같이 찍힘
 
-// $(window).on('mousemove',function(e){
-//     if( $('.mouseB').position().left > $(window).width() ){
-//         $('.mouseB').show().css({
-//             top:e.pageY+5, left:e.pageX+5})
-//         }
+$(window).on('mousemove',function(e){
+    if( $('.mouseB').position().left < $(window).width()-200 ){
+        $('.mouseB').css({ opacity:1,
+            top:e.pageY+5, left:e.pageX+5})
+        }
 
-//    else if($('.mouseB').position().left > $(window).width() && $('.mouseB').position().left == 0 ){
-//         $('.mouseB').hide()
-//     }
-//     // console.log( '.mouseB의 position().left= '+$('.mouseB').position().left )
-//     // console.log( '윈도우 넓이 = '+$(window).width() )
-// })
+   else  {
+    $('.mouseB').css({ opacity:0,
+        top:e.pageY+5, left:e.pageX-95})
+
+    }
+    // console.log( '.mouseB의 position().left= '+$('.mouseB').position().left )
+    // console.log( '윈도우 넓이 = '+$(window).width() )
+})
 
 
 
