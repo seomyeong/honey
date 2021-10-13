@@ -4,8 +4,33 @@ $('a').on('click',function(e){
 /* 마우스커서 */
 $(window).on('mousemove',function(e){
     $('.mouseB').css({
-        top:e.pageY+10, left:e.pageX+10})
+        top:e.pageY+5, left:e.pageX+5})
+    // console.log( $('.mouseB').position().left )
+
+    if( $('.mouseB').position().left > $(window).width() ){
+        $('.mouseB').hide()
+    }else if( $('.mouseB').position().left < $(window).width() ){
+        $('.mouseB').show()
+    }
 })
+
+// .mouseB의 left값이 window값보다 많은 조건식에 걸릴경우 left값으로 0도 같이 찍힘
+
+// $(window).on('mousemove',function(e){
+//     if( $('.mouseB').position().left > $(window).width() ){
+//         $('.mouseB').show().css({
+//             top:e.pageY+5, left:e.pageX+5})
+//         }
+
+//    else if($('.mouseB').position().left > $(window).width() && $('.mouseB').position().left == 0 ){
+//         $('.mouseB').hide()
+//     }
+//     // console.log( '.mouseB의 position().left= '+$('.mouseB').position().left )
+//     // console.log( '윈도우 넓이 = '+$(window).width() )
+// })
+
+
+
 
 
 /*--------------------슬라이드----------------------- */
@@ -35,10 +60,9 @@ $(window).on('scroll',function(){
 
 /* 메인배너 슬라이드 */
 var num=0; //변수 num은 slideOn클래스 이동을 위한 변수
-let Rwin=$(window).width()
+// let Rwin=$(window).width()
 let liCount=0; //메인슬라이더용 변수1
 let liLength=$('.sliderList li').length; //메인슬라이더용 변수2
-// console.log(liLength)
 
 function sliding(){
     liCount++
@@ -192,16 +216,16 @@ function farmSlide(){
     $('#farmBtn div').removeClass('farmBtnOn')
     $('#farmBtn div:eq('+farmBtnState+')').addClass('farmBtnOn')
 }
-let farmTimer=setInterval(farmSlide,2000)
+let farmTimer=setInterval(farmSlide,4000)
 
 
 $('#farmBtn div').on('click',function(){
     clearInterval(farmTimer)
-    farmTimer=setInterval(farmSlide,2000)
+    farmTimer=setInterval(farmSlide,4000)
 
     let num=$(this).index()
-    $('#farmWrap li').fadeOut(1000).removeClass('zIndex')
-    $('#farmWrap li:eq('+num+')').addClass('zIndex').fadeIn(1000)
+    $('#farmWrap li').fadeOut(2000).removeClass('zIndex')
+    $('#farmWrap li:eq('+num+')').addClass('zIndex').fadeIn(2000)
 
     $('#farmBtn div').removeClass('farmBtnOn')
     $(this).addClass('farmBtnOn')
@@ -239,29 +263,29 @@ function honeyKm(){
     if(km==40)return false
     setTimeout(function(){
         honeyKm()
-    },30)
+    },50)
 }
 function honeyMg(){
     mgP.innerText= ++mg
     if(mg==30)return false
     setTimeout(function(){
         honeyMg()
-    },30)
+    },50)
 }
 function honeyEnt(){
-    enter+=50
+    enter+=100
     enterP.innerText= enter
     if(enter==40000)return false
     setTimeout(function(){
         honeyEnt()
-    },1)
+    },3)
 }
 function honeyBcount(){
     beecountP.innerText= ++beecount
     if(beecount==600)return false
     setTimeout(function(){
         honeyBcount()
-    },2)
+    },1)
 }
 
 
