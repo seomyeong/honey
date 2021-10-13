@@ -210,8 +210,8 @@ let farmBtnState=0
 function farmSlide(){
     farmState++
     farmBtnState++
-    $('#farmWrap li').fadeOut(2000).removeClass('zIndex')
-    $('#farm'+farmState+'').addClass('zIndex').fadeIn(2000)
+    $('#farmWrap li:not(:animated)').stop().fadeOut(2000).removeClass('zIndex')
+    $('#farm'+farmState+'').stop().addClass('zIndex').fadeIn(2000)
     if(farmState==3){farmState=0;}
     if(farmBtnState==3){farmBtnState=0}
 
@@ -226,7 +226,7 @@ $('#farmBtn div').on('click',function(){
     farmTimer=setInterval(farmSlide,4000)
 
     let num=$(this).index()
-    $('#farmWrap li').fadeOut(2000).removeClass('zIndex')
+    $('#farmWrap lili:not(:animated)').stop().fadeOut(2000).removeClass('zIndex')
     $('#farmWrap li:eq('+num+')').addClass('zIndex').fadeIn(2000)
 
     $('#farmBtn div').removeClass('farmBtnOn')
@@ -241,15 +241,15 @@ $(window).on('scroll',function(){
     }
 })
 
-/* honeyWork */
+/* ----------------honeyWork--------------- */
 let km=1; let kmP=document.querySelector('#honey_km p:nth-of-type(1)');
 let mg=1; let mgP=document.querySelector('#honey_mg p:nth-of-type(1)');
 let enter=0; let enterP=document.querySelector('#honey_enter p:nth-of-type(1)');
 let beecount=1; let beecountP=document.querySelector('#honey_beecount p:nth-of-type(1)');
 let state=1
 let workpos=$('#honeyWork').position().top
-// console.log(kmP, workpos)
 
+$('#honeyWork h3').css({opacity:0})
 window.addEventListener('scroll',function(){
     if(window.scrollY >= workpos-400 && state==1){
         state=0
@@ -257,6 +257,11 @@ window.addEventListener('scroll',function(){
         honeyMg()
         honeyEnt()
         honeyBcount()
+
+    $('#honeyWork h3').css({opacity:1}).textillate({
+        in:{effect:'fadeInRight'}
+    })
+        
     }
 })
 
@@ -289,6 +294,18 @@ function honeyBcount(){
         honeyBcount()
     },1)
 }
+
+
+/* 윈도우 scroll 시 텍스트 animation 이벤트 */
+$('#need h3').css({opacity:0})
+
+$(window).on('scroll',function(){
+    if( $(window).scrollTop() >= $('#need').position().top-500 ){
+        $('#need h3').css({opacity:1}).textillate({
+            in:{effect:'fadeInLeft'}
+        })
+    }
+})
 
 
 /*-----------------------------------퀵버튼------------------------------------- */
