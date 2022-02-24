@@ -26,8 +26,9 @@ https://user-images.githubusercontent.com/89440710/155462447-5b24ecc3-fd36-430a-
 
 ### 타임딜, 남은 시간 알림
 https://user-images.githubusercontent.com/89440710/155462731-781cf390-4ff4-4894-aac9-b6191cc09a34.mp4
-현재 readme 작성일자 : 2022.02.24
-타임딜 종료일자 : 2022.12.31
+
+<p>현재 readme 작성일자 : 2022.02.24<br>
+타임딜 종료일자 : 2022.12.31</p>
 
 ### 특정한 위치 진입 시 변화하는 수치
 https://user-images.githubusercontent.com/89440710/155462953-41fdc875-80d2-4ee3-ad95-533016ae1f51.mp4
